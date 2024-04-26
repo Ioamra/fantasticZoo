@@ -1,6 +1,7 @@
 package models.creatures;
 
 public abstract class Creature {
+	
 	private enum Gender { M, F };
 	private enum State {DEAD, SICK, HEALTHY};
 	
@@ -23,7 +24,22 @@ public abstract class Creature {
 	private final int MAINTENANCE_PRICE;
 	private final int MONEY_GAIN;
 	
-	// Constructor
+	/**
+	 * Constructor to create a new creature with specified parameters.
+	 * 
+	 * @param name
+	 * @param gender
+	 * @param weight
+	 * @param size
+	 * @param MAX_AGE
+	 * @param MAX_HUNGER
+	 * @param MAX_STAMINA
+	 * @param MAX_HP
+	 * @param ADD_PRICE
+	 * @param SELL_PRICE
+	 * @param MAINTENANCE_PRICE
+	 * @param MONEY_GAIN
+	 */
 	public Creature(
 		String name, 
 		Gender gender, 
@@ -58,38 +74,57 @@ public abstract class Creature {
 		this.setState(State.HEALTHY);
 	}
 	
-	// Public Method
+	/**
+	 * Change the hunger to MAX_HUNGER.
+	 */
 	public void eat() {
 		this.setHunger(this.MAX_HUNGER);
 	}
 	
-	public void makeSound() {
-		
-	}
-	
+	/**
+	 * Restores the creature's health points (HP) to its maximum value.
+	 */
 	public void heal() {
 		this.setHp(this.MAX_HP);
 	}
 	
-	public void toogleSleep() {
+	/**
+	 * Toggles the sleep state of the creature.
+	 */
+	public void toggleSleep() {
 		this.setSleep(!this.sleep);
 	}
 	
+	/**
+	 * Sets the state of the creature to DEAD.
+	 */
 	public void die() {
 		this.setState(State.DEAD);
 	}
 	
-	public void mate(Creature mate) {
-		
-	}
-	
+	/**
+	 * Checks if the creature's age exceeds the maximum age limit and triggers death if so.
+	 */
 	public void checkAge() {
 		if (this.age > this.MAX_AGE) {
 			this.die();
 		}
 	}
+	
+	/**
+	 * Produces a sound specific to the creature.
+	 */
+	public abstract void makeSound();
+	
+	/**
+	 * Initiates the mating process with another creature.
+	 *
+	 * @param mate The creature to mate with.
+	 */
+	public abstract void mate(Creature mate);
 
 	// Getters and Setters
+	
 	public String getName() {
 		return name;
 	}
