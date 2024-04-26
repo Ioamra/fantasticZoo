@@ -1,9 +1,59 @@
 package models.creatures.reproductionType;
 
-public abstract class Viviparous {
+import models.creatures.Creature;
 
-	public Viviparous() {
-		// TODO Auto-generated constructor stub
+public abstract class Viviparous extends Creature {
+	/**
+	 * Constructor to create a new viviparous creature with specified parameters.
+	 *
+	 * @param name
+	 * @param gender
+	 * @param weight
+	 * @param size
+	 * @param MAX_AGE
+	 * @param MAX_HUNGER
+	 * @param MAX_STAMINA
+	 * @param MAX_HP
+	 * @param ADD_PRICE
+	 * @param SELL_PRICE
+	 * @param MAINTENANCE_PRICE
+	 * @param MONEY_GAIN
+	 */
+	public Viviparous(
+		String name, 
+		Gender gender, 
+		double weight, 
+		double size, 
+		int MAX_AGE, 
+		int MAX_HUNGER, 
+		int MAX_STAMINA, 
+		int MAX_HP, 
+		int ADD_PRICE, 
+		int SELL_PRICE, 
+		int MAINTENANCE_PRICE, 
+		int MONEY_GAIN
+	) {
+		super(
+			name, 
+			gender, 
+			weight, 
+			size, 
+			MAX_AGE, 
+			MAX_HUNGER, 
+			MAX_STAMINA, 
+			MAX_HP, 
+			ADD_PRICE, 
+			SELL_PRICE, 
+			MAINTENANCE_PRICE, 
+			MONEY_GAIN
+		);
 	}
-
+	
+	public void mate(Creature creature) {
+		
+	}
+	
+	public void giveBirth() {
+		
+	}
 }

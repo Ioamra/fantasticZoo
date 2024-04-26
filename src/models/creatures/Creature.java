@@ -2,7 +2,7 @@ package models.creatures;
 
 public abstract class Creature {
 	
-	private enum Gender { M, F };
+	public enum Gender { M, F };
 	private enum State {DEAD, SICK, HEALTHY};
 	
 	private String name;
