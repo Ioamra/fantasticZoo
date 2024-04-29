@@ -3,6 +3,7 @@ package models.enclosures;
 import models.creatures.Creature;
 
 public abstract class Enclosure {
+	
 	private int[] position;
 	private String name;
 	private final int SURFACE;
@@ -61,6 +62,13 @@ public abstract class Enclosure {
 	 * Add a creatures in the creature list.
 	 */
 	public void addCreature(Creature creature) {
+		
+	}
+	
+	/**
+	 * Remove a creatures in the creature list.
+	 */
+	public void removeCreature(Creature creature) {
 		
 	}
 

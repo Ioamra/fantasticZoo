@@ -21,7 +21,6 @@ public abstract class Creature {
 	private int hp;
 	private final int ADD_PRICE;
 	private final int SELL_PRICE;
-	private final int MAINTENANCE_PRICE;
 	private final int MONEY_GAIN;
 	
 	/**
@@ -64,7 +63,6 @@ public abstract class Creature {
 		this.MAX_HP = MAX_HP; 
 		this.ADD_PRICE = ADD_PRICE; 
 		this.SELL_PRICE = SELL_PRICE;
-		this.MAINTENANCE_PRICE = MAINTENANCE_PRICE;
 		this.MONEY_GAIN = MONEY_GAIN;
 		this.setAge(0);
 		this.setHunger(MAX_HUNGER);
@@ -227,10 +225,6 @@ public abstract class Creature {
 
 	public int getSELL_PRICE() {
 		return SELL_PRICE;
-	}
-
-	public int getMAINTENANCE_PRICE() {
-		return MAINTENANCE_PRICE;
 	}
 
 	public int getMONEY_GAIN() {
