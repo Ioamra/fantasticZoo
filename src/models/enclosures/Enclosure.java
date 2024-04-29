@@ -2,7 +2,6 @@ package models.enclosures;
 
 import models.creatures.Creature;
 
-// Abstract class for enclosure
 public abstract class Enclosure {
 	private int[] position;
 	private String name;
@@ -10,9 +9,10 @@ public abstract class Enclosure {
 	private final int MAX_ANIMAL;
 	private Creature[] creatureList;
 	private int cleanliness;
-	private int ADD_PRICE;
-	private int SELL_PRICE;
-	private int MAINTENANCE_PRICE;
+	private final int ADD_PRICE;
+	private final int SELL_PRICE;
+	private final int MAINTENANCE_PRICE;
+	
 	/**
 	 * Constructor to create a new creature with specified parameters.
 	 *
@@ -26,8 +26,6 @@ public abstract class Enclosure {
 	 * @param SELL_PRICE
 	 * @param MAINTENANCE_PRICE
 	 */
-
-	// Enclosure's constructor
 	public Enclosure(
 			int position,
 			String name,
@@ -43,23 +41,30 @@ public abstract class Enclosure {
 		this.setName(name);
 		this.SURFACE = SURFACE;
 		this.MAX_ANIMAL = MAX_ANIMAL;
-		this.creatureList = creatureList;
-		this.cleanliness = cleanliness;
+		setCreatureList(creatureList);
+		setCleanliness(cleanliness);
 		this.ADD_PRICE = ADD_PRICE;
 		this.SELL_PRICE = SELL_PRICE;
 		this.MAINTENANCE_PRICE = MAINTENANCE_PRICE;
-
-
 	}
-	// Public Methods
+
+	/**
+	 * Feeds all creatures in the creature list.
+	 */
 	public void feedAll() {
-
+		for (Creature creature: creatureList) {
+			creature.eat();
+		}
 	}
-	public void addCreature() {
-
+	
+	/**
+	 * Add a creatures in the creature list.
+	 */
+	public void addCreature(Creature creature) {
+		
 	}
 
-	// Getter and setter for Enclosure
+	// Getters and Setters
 
 	public int getSurface() {
 		return SURFACE;
@@ -89,24 +94,12 @@ public abstract class Enclosure {
 		return ADD_PRICE;
 	}
 
-	public void setAddPrice(int ADD_PRICE) {
-		this.ADD_PRICE = ADD_PRICE;
-	}
-
 	public int getSellPrice() {
 		return SELL_PRICE;
 	}
 
-	public void setSellPrice(int SELL_PRICE) {
-		this.SELL_PRICE = SELL_PRICE;
-	}
-
 	public int getMaintenancePrice() {
 		return MAINTENANCE_PRICE;
-	}
-
-	public void setMaintenancePrice(int MAINTENANCE_PRICE) {
-		this.MAINTENANCE_PRICE = MAINTENANCE_PRICE;
 	}
 
 	public String getName() {
@@ -125,6 +118,3 @@ public abstract class Enclosure {
 		this.position = new int[]{position};
 	}
 }
-
-
-

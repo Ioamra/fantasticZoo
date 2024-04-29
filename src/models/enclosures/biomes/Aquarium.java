@@ -1,9 +1,67 @@
 package models.enclosures.biomes;
 
-public class Aquarium {
+import models.creatures.Creature;
+import models.enclosures.Enclosure;
 
-	public Aquarium() {
-		// TODO Auto-generated constructor stub
+public class Aquarium extends Enclosure {
+
+	private int depth;
+	private int salinity;
+
+	/**
+	 * Constructor to create a new aquarium enclosure with specified parameters.
+	 * 
+	 * @param position
+	 * @param name
+	 * @param SURFACE
+	 * @param MAX_ANIMAL
+	 * @param creatureList
+	 * @param cleanliness
+	 * @param ADD_PRICE
+	 * @param SELL_PRICE
+	 * @param MAINTENANCE_PRICE
+	 */
+	public Aquarium(
+			int position,
+			String name,
+			int SURFACE,
+			int MAX_ANIMAL,
+			Creature[] creatureList,
+			int cleanliness,
+			int ADD_PRICE,
+			int SELL_PRICE,
+			int MAINTENANCE_PRICE
+	) {
+		super(
+			position,
+			name,
+			SURFACE,
+			MAX_ANIMAL,
+			creatureList,
+			cleanliness,
+			ADD_PRICE,
+			SELL_PRICE,
+			MAINTENANCE_PRICE
+		);
+		this.setDepth(depth);
+		this.setSalinity(salinity);
+	}
+	
+	// Getters and Setters
+	
+	public int getDepth() {
+		return depth;
 	}
 
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+
+	public int getSalinity() {
+		return salinity;
+	}
+
+	public void setSalinity(int salinity) {
+		this.salinity = salinity;
+	}
 }
