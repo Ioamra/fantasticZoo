@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ZooVueController">
    <children>
@@ -25,15 +26,78 @@
                 <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
               </rowConstraints>
                <children>
-                  <Pane style="-fx-background-color: #333333;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                  <Pane style="-fx-background-color: #666666;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                  <Pane style="-fx-background-color: #999999;" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-                  <Pane style="-fx-background-color: #cccccc;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                  <Pane style="-fx-background-color: #ffffff;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Pane style="-fx-background-color: #ffcccc;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Pane style="-fx-background-color: #ff9999;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                  <Pane style="-fx-background-color: #ff6666;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Pane style="-fx-background-color: #ff3333;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Pane fx:id="enclosure1" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure2" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure3" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure4" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure5" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure6" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure7" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure8" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
+                  <Pane fx:id="enclosure9" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                      <children>
+                          <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                      </children>
+                  </Pane>
                </children>
             </GridPane>
          </children>
@@ -47,7 +111,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="nextDayButton" alignment="CENTER" layoutX="326.0" layoutY="15.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Jour suivant" textAlignment="CENTER" wrapText="true" onAction="#handleNextDayButton"/>
+                  <Button fx:id="nextDayButton" alignment="CENTER" layoutX="326.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleNextDayButton" prefHeight="60.0" prefWidth="60.0" text="Jour suivant" textAlignment="CENTER" wrapText="true" />
                </children>
             </Pane>
          </children>

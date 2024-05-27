@@ -5,7 +5,7 @@ import models.enclosures.Enclosure;
 
 public class Master {
 	
-	private enum Gender { M, F };
+	public enum Gender { M, F };
 	
 	private String name;
 	private int age;

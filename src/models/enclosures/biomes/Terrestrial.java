@@ -17,8 +17,6 @@ public class Terrestrial extends Enclosure {
 	 * @param ADD_PRICE
 	 * @param SELL_PRICE
 	 * @param MAINTENANCE_PRICE
-	 * @param depth
-	 * @param salinity
 	 */
 	public Terrestrial(
 		int position,
@@ -29,9 +27,7 @@ public class Terrestrial extends Enclosure {
 		int cleanliness,
 		int ADD_PRICE,
 		int SELL_PRICE,
-		int MAINTENANCE_PRICE,
-		int depth,
-		int salinity
+		int MAINTENANCE_PRICE
 	) {
 		super(
 			position,

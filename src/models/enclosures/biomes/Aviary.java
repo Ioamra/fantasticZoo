@@ -19,8 +19,7 @@ public class Aviary extends Enclosure {
 	 * @param ADD_PRICE
 	 * @param SELL_PRICE
 	 * @param MAINTENANCE_PRICE
-	 * @param depth
-	 * @param salinity
+	 * @param height
 	 */
 	public Aviary(
 		int position,
@@ -32,8 +31,7 @@ public class Aviary extends Enclosure {
 		int ADD_PRICE,
 		int SELL_PRICE,
 		int MAINTENANCE_PRICE,
-		int depth,
-		int salinity
+		int height
 	) {
 		super(
 			position,
@@ -46,6 +44,7 @@ public class Aviary extends Enclosure {
 			SELL_PRICE,
 			MAINTENANCE_PRICE
 		);
+		this.setHeight(height);
 	}
 	
 	public void cleanRoof() {
