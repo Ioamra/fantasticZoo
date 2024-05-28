@@ -15,13 +15,12 @@ public abstract class Enclosure {
 	private final int MAINTENANCE_PRICE;
 	
 	/**
-	 * Constructor to create a new creature with specified parameters.
+	 * Constructor to create a new enclosure with specified parameters.
 	 *
 	 * @param position	
 	 * @param name
 	 * @param SURFACE
 	 * @param MAX_ANIMAL
-	 * @param creatureList
 	 * @param cleanliness
 	 * @param ADD_PRICE
 	 * @param SELL_PRICE
@@ -32,7 +31,6 @@ public abstract class Enclosure {
 			String name,
 			int SURFACE,
 			int MAX_ANIMAL,
-			Creature[] creatureList,
 			int cleanliness,
 			int ADD_PRICE,
 			int SELL_PRICE,
@@ -42,7 +40,7 @@ public abstract class Enclosure {
 		this.setName(name);
 		this.SURFACE = SURFACE;
 		this.MAX_ANIMAL = MAX_ANIMAL;
-		setCreatureList(creatureList);
+		setCreatureList(new Creature[0]);
 		setCleanliness(cleanliness);
 		this.ADD_PRICE = ADD_PRICE;
 		this.SELL_PRICE = SELL_PRICE;

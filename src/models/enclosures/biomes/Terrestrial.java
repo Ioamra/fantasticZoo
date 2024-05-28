@@ -1,6 +1,5 @@
 package models.enclosures.biomes;
 
-import models.creatures.Creature;
 import models.enclosures.Enclosure;
 
 public class Terrestrial extends Enclosure {
@@ -23,7 +22,6 @@ public class Terrestrial extends Enclosure {
 		String name,
 		int SURFACE,
 		int MAX_ANIMAL,
-		Creature[] creatureList,
 		int cleanliness,
 		int ADD_PRICE,
 		int SELL_PRICE,
@@ -34,7 +32,6 @@ public class Terrestrial extends Enclosure {
 			name,
 			SURFACE,
 			MAX_ANIMAL,
-			creatureList,
 			cleanliness,
 			ADD_PRICE,
 			SELL_PRICE,

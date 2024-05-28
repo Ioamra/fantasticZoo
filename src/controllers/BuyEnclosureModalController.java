@@ -24,7 +24,7 @@ public class BuyEnclosureModalController {
 
     @FXML
     public void initialize() {
-        enclosureTypeChoiceBox.setItems(FXCollections.observableArrayList("Aquarium", "Aviary", "Terrestrial"));
+    	enclosureTypeChoiceBox.getItems().addAll("Aquarium", "Aviary", "Terrestrial");
     }
 
     public void setLocation(int location) {
@@ -56,13 +56,13 @@ public class BuyEnclosureModalController {
 
         switch (selectedType) {
             case "Aquarium":
-                enclosure = new Aquarium(location, name, surface, maxAnimal, new Creature[0], cleanliness, aquariumPrice, aquariumPrice/2, aquariumMaintenancePrice, aquariumDepth, aquariumSalinity);
+                enclosure = new Aquarium(location, name, surface, maxAnimal, cleanliness, aquariumPrice, aquariumPrice/2, aquariumMaintenancePrice, aquariumDepth, aquariumSalinity);
                 break;
             case "Aviary":
-                enclosure = new Aviary(location, name, surface, maxAnimal, new Creature[0], cleanliness, aviaryPrice, aviaryPrice/2, aviaryMaintenancePrice, aviaryHeight);
+                enclosure = new Aviary(location, name, surface, maxAnimal, cleanliness, aviaryPrice, aviaryPrice/2, aviaryMaintenancePrice, aviaryHeight);
                 break;
             case "Terrestrial":
-                enclosure = new Terrestrial(location, name, surface, maxAnimal, new Creature[0], cleanliness, terrestrialPrice, terrestrialPrice/2, terrestrialMaintenancePrice);
+                enclosure = new Terrestrial(location, name, surface, maxAnimal, cleanliness, terrestrialPrice, terrestrialPrice/2, terrestrialMaintenancePrice);
                 break;
         }
 

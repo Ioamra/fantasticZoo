@@ -48,8 +48,8 @@ public class InitMasterVueController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ZooVue.fxml"));
             Parent root = loader.load();
 
-            ZooVueController controller = loader.getController();
-            controller.setMaster(master);
+            ZooVueController zooController = loader.getController();
+            zooController.initMasterAndZoo(master);
 
             Stage stage = (Stage) playerNameField.getScene().getWindow();
             stage.setScene(new Scene(root));
