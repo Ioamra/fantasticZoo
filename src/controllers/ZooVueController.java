@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -61,7 +62,33 @@ public class ZooVueController {
     }
     
     @FXML
-    private void handleEnclosureClick(ActionEvent event) {
+    private void handleEnclosureClick(MouseEvent event) {
+    	Pane clickedEnclosure= (Pane) event.getSource();
+    	int location = Integer.parseInt(clickedEnclosure.getId().replace("enclosure", "")) - 1;
+    	Enclosure enclosure = zoo.getEnclosureList()[location];
+    	if (!(enclosure instanceof UndefinedEnclosure))  {
+    		openEnclosureView(enclosure);
+    	}
+    }
+    
+    private void openEnclosureView(Enclosure enclosure) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/EnclosureVue.fxml"));
+            Parent root = loader.load();
+
+            EnclosureVueController enclosureController = loader.getController();
+            enclosureController.setEnclosure(enclosure);
+
+            Stage stage = (Stage) nextDayButton.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    private void handleEnclosureSellOrBuy(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         Pane parentPane = (Pane) clickedButton.getParent();
         int location = Integer.parseInt(parentPane.getId().replace("enclosure", "")) - 1;
@@ -120,14 +147,19 @@ public class ZooVueController {
 
     private void updateEnclosureText(Pane enclosurePane, int location) {
         Text text = (Text) enclosurePane.getChildren().get(0);
+        Button button = (Button) enclosurePane.getChildren().get(1);
         if (zoo.getEnclosureList()[location] instanceof UndefinedEnclosure) {
             text.setText("Emplacement d'enclos");
+            button.setText("+");
         } else if (zoo.getEnclosureList()[location] instanceof Aviary) {
             text.setText("Aviary "+zoo.getEnclosureList()[location].getName());
+            button.setText("-");
         } else if (zoo.getEnclosureList()[location] instanceof Terrestrial) {
         	text.setText("Terrestrial "+zoo.getEnclosureList()[location].getName());
+            button.setText("-");
         } else if (zoo.getEnclosureList()[location] instanceof Aquarium) {
         	text.setText("Aquarium "+zoo.getEnclosureList()[location].getName());
+            button.setText("-");
         }
     }
 }

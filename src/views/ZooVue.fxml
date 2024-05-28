@@ -26,126 +26,126 @@
                         <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
                     </rowConstraints>
                     <children>
-                        <Pane fx:id="enclosure1" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Pane fx:id="enclosure1" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="0">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure2" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Pane fx:id="enclosure2" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="0">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure3" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <Pane fx:id="enclosure3" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="0">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure4" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Pane fx:id="enclosure4" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="1">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure5" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Pane fx:id="enclosure5" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure6" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Pane fx:id="enclosure6" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure7" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Pane fx:id="enclosure7" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="0" GridPane.rowIndex="2">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure8" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Pane fx:id="enclosure8" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane fx:id="enclosure9" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Pane fx:id="enclosure9" onMouseClicked="#handleEnclosureClick" style="-fx-background-color: #999999; -fx-border-color: white; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="2">
                             <children>
                                 <Text layoutY="115.0" text="Emplacement d'enclos" textAlignment="CENTER" wrappingWidth="266.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEnclosureClick" text="+">
+                                <Button prefWidth="30.0" prefHeight="30.0" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EnclosureVueController">
+    <children>
+        <Pane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
+            
+        </Pane>
+        <Pane layoutX="400.0" prefWidth="400.0" style="-fx-background-color: #333333; -fx-border-color: white; -fx-border-width: 2px;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+	            <Pane layoutY="605.0" prefHeight="70.0" prefWidth="400.0" style="-fx-background-color: #aaaaaa; -fx-border-color: white; -fx-border-width: 2px;">
+	                <children>
+	                	<Button prefWidth="40.0" prefHeight="40.0" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="+">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+                         <Button prefWidth="40.0" prefHeight="40.0" layoutX="70.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="-">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+                         <Button prefWidth="40.0" prefHeight="40.0" layoutX="125.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="۝">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+                         <Button prefWidth="40.0" prefHeight="40.0" layoutX="180.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="z">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+                         <Button prefWidth="40.0" prefHeight="40.0" layoutX="235.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="e">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+                         <Button prefWidth="40.0" prefHeight="40.0" layoutX="290.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="r">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+                         <Button prefWidth="40.0" prefHeight="40.0" layoutX="345.0" layoutY="15.0" mnemonicParsing="false" onAction="" text="t">
+                             <font>
+                             	<Font name="System Bold" size="14.0" />
+                             </font>
+                         </Button>
+	                </children>
+	            </Pane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
