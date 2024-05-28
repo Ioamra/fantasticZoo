@@ -9,33 +9,20 @@ public class Terrestrial extends Enclosure {
 	 * 
 	 * @param position
 	 * @param name
-	 * @param SURFACE
-	 * @param MAX_ANIMAL
-	 * @param creatureList
+	 * @param surface
 	 * @param cleanliness
-	 * @param ADD_PRICE
-	 * @param SELL_PRICE
-	 * @param MAINTENANCE_PRICE
 	 */
 	public Terrestrial(
 		int position,
 		String name,
-		int SURFACE,
-		int MAX_ANIMAL,
-		int cleanliness,
-		int ADD_PRICE,
-		int SELL_PRICE,
-		int MAINTENANCE_PRICE
+		int surface,
+		int cleanliness
 	) {
 		super(
 			position,
 			name,
-			SURFACE,
-			MAX_ANIMAL,
-			cleanliness,
-			ADD_PRICE,
-			SELL_PRICE,
-			MAINTENANCE_PRICE
+			surface,
+			cleanliness
 		);
 	}
 

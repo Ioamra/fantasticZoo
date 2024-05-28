@@ -5,7 +5,7 @@ import models.enclosures.Enclosure;
 public class UndefinedEnclosure extends Enclosure {
 	
 	public UndefinedEnclosure(int position) {
-		super(position, "", 0, 0, 0, 0, 0, 0);
+		super(position, "", 0, 0);
 	}
 
 }
