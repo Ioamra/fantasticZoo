@@ -47,15 +47,18 @@ public class ZooVueController {
     private Pane enclosure8;
     @FXML
     private Pane enclosure9;
+    @FXML
+    private Text consoleText;
+    @FXML
+    private Text zooNameText;
+    @FXML
+    private Text masterName;
+    @FXML
+    private Text masterMoney;
 
     private int nbEnclosure = 9;
-    private int dayCounter = 1;
+    private int dayCounter;
     private Zoo zoo;
-
-    @FXML
-    private void initialize() {
-        dayLabel.setText("Jour " + dayCounter);
-    }
 
     @FXML
     void handleNextDayButton() {
@@ -80,7 +83,9 @@ public class ZooVueController {
 
             EnclosureVueController enclosureController = loader.getController();
             enclosureController.setEnclosure(enclosure);
-            enclosureController.setZooVueController(this);
+            enclosureController.setDayCounter(dayCounter);
+            enclosureController.setZoo(zoo);
+            enclosureController.showSideInfos();
 
             Stage stage = (Stage) nextDayButton.getScene().getWindow();
             Scene scene = new Scene(root);
@@ -108,8 +113,10 @@ public class ZooVueController {
         for (int i = 0; i < nbEnclosure; i++) {
             enclosures[i] = new UndefinedEnclosure(i + 1);
         }
-        this.zoo = new Zoo("Fantastic Zoo", master, nbEnclosure, enclosures);
+        this.zoo = new Zoo(zooName, master, nbEnclosure, enclosures);
         updateEnclosureStatus();
+        this.setDayCounter(1);
+        this.showSideInfos();
     }
     
     private void openBuyEnclosureModal(int location) {
@@ -176,15 +183,22 @@ public class ZooVueController {
             text.setText("Emplacement d'enclos");
             button.setText("+");
         } else if (zoo.getEnclosureList()[location] instanceof Aviary) {
-            text.setText("Aviary "+zoo.getEnclosureList()[location].getName());
+            text.setText("Aviary " + zoo.getEnclosureList()[location].getName());
             button.setText("-");
         } else if (zoo.getEnclosureList()[location] instanceof Terrestrial) {
-        	text.setText("Terrestrial "+zoo.getEnclosureList()[location].getName());
+        	text.setText("Terrestrial " + zoo.getEnclosureList()[location].getName());
             button.setText("-");
         } else if (zoo.getEnclosureList()[location] instanceof Aquarium) {
-        	text.setText("Aquarium "+zoo.getEnclosureList()[location].getName());
+        	text.setText("Aquarium " + zoo.getEnclosureList()[location].getName());
             button.setText("-");
         }
+    }
+    
+    public void showSideInfos() {
+        dayLabel.setText("Jour " + dayCounter);
+        zooNameText.setText(this.zoo.getName());
+        masterName.setText(this.zoo.getMaster().getName());
+        masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
     }
     
     public Zoo getZoo() {
@@ -194,5 +208,8 @@ public class ZooVueController {
     public void setZoo(Zoo zoo) {
         this.zoo = zoo;
     }
-
+    
+    public void setDayCounter(int dayCounter) {
+        this.dayCounter = dayCounter;
+    }
 }

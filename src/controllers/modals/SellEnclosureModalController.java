@@ -42,7 +42,7 @@ public class SellEnclosureModalController {
     }
 
 	@FXML
-	private void handlesellEnclosure() {
+	private void handleSellEnclosure() {
 		if (this.enclosure.getCreatureList().length > 0) {
 			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 	        alert.setTitle("Confirmation de vente");

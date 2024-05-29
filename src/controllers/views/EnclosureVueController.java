@@ -7,17 +7,31 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import models.enclosures.Enclosure;
+import models.enclosures.biomes.Aquarium;
+import models.enclosures.biomes.Aviary;
+import models.enclosures.biomes.Terrestrial;
+import models.enclosures.biomes.UndefinedEnclosure;
+import models.zoo.Zoo;
 
 public class EnclosureVueController {
     @FXML
     private Label enclosureLabel;
-    
     @FXML
     private Button btnReturnToZoo;
+    @FXML
+    private Text consoleText;
+    @FXML
+    private Text enclosureName;
+    @FXML
+    private Text masterName;
+    @FXML
+    private Text masterMoney;
 
     private Enclosure enclosure;
-    private ZooVueController zooVueController;
+    private Zoo zoo;
+    private int dayCounter;
     
     @FXML
     private void returnToZooVue(ActionEvent event) {
@@ -27,18 +41,16 @@ public class EnclosureVueController {
 	        Parent root = loader.load();
 
 	        ZooVueController zooController = loader.getController();
-	        zooController.setZoo(this.zooVueController.getZoo());
+	        zooController.setZoo(this.zoo);
 	        zooController.updateEnclosureStatus();
+	        zooController.setDayCounter(dayCounter);
+	        zooController.showSideInfos();
 
 	        Scene scene = btnReturnToZoo.getScene();
 	        scene.setRoot(root);
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
-    }
-    
-    public void setZooVueController(ZooVueController zooVueController) {
-        this.zooVueController = zooVueController;
     }
 
     public void setEnclosure(Enclosure enclosure) {
@@ -78,5 +90,28 @@ public class EnclosureVueController {
     @FXML
     private void openFeedEnclosureModal() {
     	
+    }
+    
+    public void setDayCounter(int dayCounter) {
+        this.dayCounter = dayCounter;
+    }
+    
+    public void setZoo(Zoo zooObject) {
+    	this.zoo = zooObject;
+    }
+    
+
+    public void showSideInfos() {
+    	 if (this.enclosure instanceof UndefinedEnclosure) {
+    		 enclosureName.setText("Emplacement d'enclos");
+         } else if (this.enclosure instanceof Aviary) {
+        	 enclosureName.setText("Aviary " + this.enclosure.getName());
+         } else if (this.enclosure instanceof Terrestrial) {
+        	 enclosureName.setText("Terrestrial " + this.enclosure.getName());
+         } else if (this.enclosure instanceof Aquarium) {
+        	 enclosureName.setText("Aquarium " + this.enclosure.getName());
+         }
+        masterName.setText(this.zoo.getMaster().getName());
+        masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
     }
 }

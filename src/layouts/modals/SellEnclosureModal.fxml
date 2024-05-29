@@ -42,7 +42,7 @@
 		      <Font size="14.0" />
 		   </font>
 		</Text>
-		<Button layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#handlesellEnclosure" prefWidth="80.0" text="Confirmer" textFill="BLACK" AnchorPane.leftAnchor="90.0" />
+		<Button layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleSellEnclosure" prefWidth="80.0" text="Confirmer" textFill="BLACK" AnchorPane.leftAnchor="90.0" />
 		<Button layoutX="190.0" layoutY="240.0" mnemonicParsing="false" onAction="#cancel" prefWidth="80.0" text="Annuler" textFill="BLACK" AnchorPane.rightAnchor="90.0" />
     </children>
 </AnchorPane>
