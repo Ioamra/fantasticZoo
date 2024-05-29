@@ -73,7 +73,7 @@ public class BuyEnclosureModalController {
         }
 
         if (enclosure != null) {
-        	this.zooVueController.addEnclosure(location, enclosure);
+        	this.zooVueController.updateEnclosure(enclosure);
             Stage stage = (Stage) enclosureTypeChoiceBox.getScene().getWindow();
             stage.close();
         }

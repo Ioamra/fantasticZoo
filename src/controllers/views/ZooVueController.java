@@ -3,6 +3,7 @@ package controllers.views;
 import java.io.IOException;
 
 import controllers.modals.BuyEnclosureModalController;
+import controllers.modals.SellEnclosureModalController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -98,11 +99,11 @@ public class ZooVueController {
         if (enclosure instanceof UndefinedEnclosure) {
             openBuyEnclosureModal(location);
         } else {
-            // Logique pour l'enclos existant, si nécessaire
+            openSellEnclosureModal(enclosure);
         }
     }
     
-    public void initMasterAndZoo(Master master) {
+    public void initMasterAndZoo(String zooName, Master master) {
         Enclosure[] enclosures = new Enclosure[nbEnclosure];
         for (int i = 0; i < nbEnclosure; i++) {
             enclosures[i] = new UndefinedEnclosure(i + 1);
@@ -130,9 +131,26 @@ public class ZooVueController {
             e.printStackTrace();
         }
     }
+    
+    private void openSellEnclosureModal(Enclosure enclosure) {
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/SellEnclosureModal.fxml"));
+            Parent root = loader.load();
 
-    public void addEnclosure(int location, Enclosure enclosure) {
-        zoo.getEnclosureList()[location] = enclosure;
+            SellEnclosureModalController sellEnclosureModalController = loader.getController();
+            sellEnclosureModalController.setEnclosure(enclosure);
+            sellEnclosureModalController.setZooVueController(this);
+            sellEnclosureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+            updateEnclosureStatus();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     public void updateEnclosure(Enclosure enclosure) {

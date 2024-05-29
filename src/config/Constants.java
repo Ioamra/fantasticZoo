@@ -1,6 +1,10 @@
 package config;
 
 public class Constants {
+	public static class Master {
+		public static final int INITIAL_MONEY = 10000;
+	}
+	
 	public static class Enclosure {
 		public static final int MAX_CLEANLINESS = 100;
 		

@@ -17,20 +17,21 @@ import models.master.Master;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import config.Constants;
+
 public class InitMasterVueController implements Initializable {
 
     @FXML
     private TextField playerNameField;
-    
     @FXML
     private TextField ageField;
-    
     @FXML
     private ChoiceBox<String> genderChoiceBox;
+    @FXML
+    private TextField zooName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Initialize the ChoiceBox with gender options
         ObservableList<String> genderOptions = FXCollections.observableArrayList("M", "F");
         genderChoiceBox.setItems(genderOptions);
     }
@@ -41,15 +42,14 @@ public class InitMasterVueController implements Initializable {
             String playerName = playerNameField.getText();
             int age = Integer.parseInt(ageField.getText());
             Master.Gender gender = Master.Gender.valueOf(genderChoiceBox.getValue());
-            int money = 10000;
 
-            Master master = new Master(playerName, age, gender, money);
+            Master master = new Master(playerName, age, gender, Constants.Master.INITIAL_MONEY);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/views/ZooVue.fxml"));
             Parent root = loader.load();
 
             ZooVueController zooController = loader.getController();
-            zooController.initMasterAndZoo(master);
+            zooController.initMasterAndZoo(zooName.getText(), master);
 
             Stage stage = (Stage) playerNameField.getScene().getWindow();
             stage.setScene(new Scene(root));
