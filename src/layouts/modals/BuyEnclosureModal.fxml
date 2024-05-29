@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BuyEnclosureModalController">
+<AnchorPane prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modals.BuyEnclosureModalController">
     <children>
         <Text fill="WHITE" layoutY="27.0" text="Acheter un enclos" textAlignment="CENTER" wrappingWidth="350.0">
          <font>

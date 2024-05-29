@@ -1,6 +1,7 @@
-package controllers;
+package controllers.modals;
 
 import config.Constants;
+import controllers.views.ZooVueController;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -19,7 +20,7 @@ public class BuyEnclosureModalController {
     private TextField nameField;
 
     private int location;
-    private ZooVueController parentController;
+    private ZooVueController zooVueController;
 
     @FXML
     public void initialize() {
@@ -30,8 +31,8 @@ public class BuyEnclosureModalController {
         this.location = location;
     }
 
-    public void setParentController(ZooVueController parentController) {
-        this.parentController = parentController;
+    public void setZooVueController(ZooVueController zooVueController) {
+        this.zooVueController = zooVueController;
     }
 
     @FXML
@@ -72,7 +73,7 @@ public class BuyEnclosureModalController {
         }
 
         if (enclosure != null) {
-            parentController.addEnclosure(location, enclosure);
+        	this.zooVueController.addEnclosure(location, enclosure);
             Stage stage = (Stage) enclosureTypeChoiceBox.getScene().getWindow();
             stage.close();
         }

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.views;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ public class TutoVueController {
 	@FXML
 	void GoToZooVue(ActionEvent event) {
 	    try {
-	        Parent root = FXMLLoader.load(getClass().getResource("/views/InitMasterVue.fxml"));
+	        Parent root = FXMLLoader.load(getClass().getResource("/layouts/views/InitMasterVue.fxml"));
 	        Scene scene = button.getScene();
 	        scene.setRoot(root);
 	    } catch (Exception e) {

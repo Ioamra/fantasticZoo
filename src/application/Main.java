@@ -11,7 +11,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/views/TutoVue.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/layouts/views/TutoVue.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Fantastic Zoo");
 			primaryStage.setResizable(false);

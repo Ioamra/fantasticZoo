@@ -1,7 +1,8 @@
-package controllers;
+package controllers.views;
 
 import java.io.IOException;
 
+import controllers.modals.BuyEnclosureModalController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -73,11 +74,12 @@ public class ZooVueController {
     
     private void openEnclosureView(Enclosure enclosure) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/EnclosureVue.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/views/EnclosureVue.fxml"));
             Parent root = loader.load();
 
             EnclosureVueController enclosureController = loader.getController();
             enclosureController.setEnclosure(enclosure);
+            enclosureController.setZooVueController(this);
 
             Stage stage = (Stage) nextDayButton.getScene().getWindow();
             Scene scene = new Scene(root);
@@ -111,12 +113,12 @@ public class ZooVueController {
     
     private void openBuyEnclosureModal(int location) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BuyEnclosureModal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/BuyEnclosureModal.fxml"));
             Parent root = loader.load();
 
-            BuyEnclosureModalController controller = loader.getController();
-            controller.setLocation(location);
-            controller.setParentController(this);
+            BuyEnclosureModalController buyEnclosureModalController = loader.getController();
+            buyEnclosureModalController.setLocation(location);
+            buyEnclosureModalController.setZooVueController(this);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -132,8 +134,12 @@ public class ZooVueController {
     public void addEnclosure(int location, Enclosure enclosure) {
         zoo.getEnclosureList()[location] = enclosure;
     }
+    
+    public void updateEnclosure(Enclosure enclosure) {
+    	zoo.getEnclosureList()[enclosure.getPosition()] = enclosure;
+    }
 
-    private void updateEnclosureStatus() {
+    public void updateEnclosureStatus() {
         updateEnclosureText(enclosure1, 0);
         updateEnclosureText(enclosure2, 1);
         updateEnclosureText(enclosure3, 2);
@@ -162,4 +168,13 @@ public class ZooVueController {
             button.setText("-");
         }
     }
+    
+    public Zoo getZoo() {
+        return zoo;
+    }
+
+    public void setZoo(Zoo zoo) {
+        this.zoo = zoo;
+    }
+
 }

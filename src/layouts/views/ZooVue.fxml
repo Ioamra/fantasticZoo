@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ZooVueController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.views.ZooVueController">
     <children>
         <Pane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -158,14 +158,14 @@
         </Pane>
         <Pane layoutX="400.0" prefWidth="400.0" style="-fx-background-color: #333333; -fx-border-color: white; -fx-border-width: 2px;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-            <Pane layoutY="585.0" prefHeight="90.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
+            <Pane layoutY="605.0" prefHeight="70.0" prefWidth="400.0" style="-fx-background-color: #aaaaaa; -fx-border-color: white; -fx-border-width: 2px;">
                 <children>
-                    <Label fx:id="dayLabel" alignment="CENTER" layoutX="16.0" layoutY="15.0" prefHeight="60.0" prefWidth="310.0" text="Jour 1" textAlignment="CENTER">
+                    <Label fx:id="dayLabel" alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="40.0" prefWidth="310.0" text="Jour 1" textAlignment="CENTER">
                         <font>
                         <Font name="System Bold" size="18.0" />
                         </font>
                     </Label>
-                    <Button fx:id="nextDayButton" alignment="CENTER" layoutX="326.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleNextDayButton" prefHeight="60.0" prefWidth="60.0" text="Jour suivant" textAlignment="CENTER" wrapText="true" />
+                    <Button fx:id="nextDayButton" alignment="CENTER" layoutX="265.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleNextDayButton" prefHeight="40.0" prefWidth="120.0" text="Jour suivant" textAlignment="CENTER" wrapText="true" />
                 </children>
             </Pane>
             </children>

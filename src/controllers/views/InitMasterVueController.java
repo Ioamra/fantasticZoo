@@ -1,4 +1,4 @@
-package controllers;
+package controllers.views;
 
 import java.io.IOException;
 
@@ -45,7 +45,7 @@ public class InitMasterVueController implements Initializable {
 
             Master master = new Master(playerName, age, gender, money);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ZooVue.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/views/ZooVue.fxml"));
             Parent root = loader.load();
 
             ZooVueController zooController = loader.getController();
