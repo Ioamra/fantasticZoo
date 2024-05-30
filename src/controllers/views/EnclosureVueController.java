@@ -3,10 +3,12 @@ package controllers.views;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
@@ -28,10 +30,36 @@ public class EnclosureVueController {
     private Text masterName;
     @FXML
     private Text masterMoney;
+    @FXML
+    private ImageView openBuyCreatureImage;
+    @FXML
+    private ImageView openSellCreatureImage;
+    @FXML
+    private ImageView openMoveCreatureImage;
+    @FXML
+    private ImageView openHealEnclosureImage;
+    @FXML
+    private ImageView openFeedEnclosureImage;
+    @FXML
+    private ImageView openCleanEnclosureImage;
+    @FXML
+    private ImageView openUpgradeEnclosureImage;
 
     private Enclosure enclosure;
     private Zoo zoo;
     private int dayCounter;
+    
+    @FXML
+    public void initialize() {
+    	btnReturnToZoo.setCursor(Cursor.HAND);
+    	openBuyCreatureImage.setCursor(Cursor.HAND);
+    	openSellCreatureImage.setCursor(Cursor.HAND);
+    	openMoveCreatureImage.setCursor(Cursor.HAND);
+    	openHealEnclosureImage.setCursor(Cursor.HAND);
+    	openFeedEnclosureImage.setCursor(Cursor.HAND);
+    	openCleanEnclosureImage.setCursor(Cursor.HAND);
+    	openUpgradeEnclosureImage.setCursor(Cursor.HAND);
+    }
     
     @FXML
     private void returnToZooVue(ActionEvent event) {

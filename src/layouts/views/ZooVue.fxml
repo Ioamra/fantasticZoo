@@ -33,7 +33,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton1" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -47,7 +47,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton2" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -61,7 +61,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton3" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -75,7 +75,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton4" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -89,7 +89,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton5" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -103,7 +103,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton6" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -117,7 +117,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton7" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -131,7 +131,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton8" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
@@ -145,7 +145,7 @@
                                         <Font size="18.0" />
                                     </font>
                                 </Text>
-                                <Button layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
+                                <Button fx:id="enclosureSellOrBuyButton9" layoutX="225.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnclosureSellOrBuy" prefHeight="30.0" prefWidth="30.0" text="+">
                                     <font>
                                     <Font name="System Bold" size="14.0" />
                                     </font>
