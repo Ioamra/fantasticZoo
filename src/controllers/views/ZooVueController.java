@@ -7,6 +7,7 @@ import controllers.modals.SellEnclosureModalController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -55,11 +56,43 @@ public class ZooVueController {
     private Text masterName;
     @FXML
     private Text masterMoney;
+    @FXML
+    private Button enclosureSellOrBuyButton1;
+    @FXML
+    private Button enclosureSellOrBuyButton2;
+    @FXML
+    private Button enclosureSellOrBuyButton3;
+    @FXML
+    private Button enclosureSellOrBuyButton4;
+    @FXML
+    private Button enclosureSellOrBuyButton5;
+    @FXML
+    private Button enclosureSellOrBuyButton6;
+    @FXML
+    private Button enclosureSellOrBuyButton7;
+    @FXML
+    private Button enclosureSellOrBuyButton8;
+    @FXML
+    private Button enclosureSellOrBuyButton9;
 
     private int nbEnclosure = 9;
     private int dayCounter;
     private Zoo zoo;
 
+    @FXML
+    public void initialize() {
+        enclosureSellOrBuyButton1.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton2.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton3.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton4.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton5.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton6.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton7.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton8.setCursor(Cursor.HAND);
+        enclosureSellOrBuyButton9.setCursor(Cursor.HAND);
+        nextDayButton.setCursor(Cursor.HAND);
+    }
+    
     @FXML
     void handleNextDayButton() {
         dayCounter++;

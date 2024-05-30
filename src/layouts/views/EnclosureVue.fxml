@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -20,7 +22,7 @@
         <Pane layoutX="400.0" prefWidth="400.0" style="-fx-background-color: #333333; -fx-border-color: white; -fx-border-width: 2px;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
 	            <Pane prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-border-width: 0 0 2px 0;">
-                    <Text fx:id="enclosureName" fill="WHITE" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dfbdfbdf" textAlignment="CENTER" wrappingWidth="400.0">
+                    <Text fx:id="enclosureName" fill="WHITE" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="400.0">
                         <font>
                             <Font name="System Bold" size="18.0" />
                         </font>
@@ -43,41 +45,41 @@
 	            </Pane>
 	            <Pane layoutY="605.0" prefHeight="70.0" prefWidth="400.0" style="-fx-background-color: #aaaaaa; -fx-border-color: white; -fx-border-width: 2px;">
 	                <children>
-	                	<Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#openBuyCreatureModal" prefHeight="40.0" prefWidth="40.0" text="+">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
-                         <Button layoutX="70.0" layoutY="15.0" mnemonicParsing="false" onAction="#openSellCreatureModal" prefHeight="40.0" prefWidth="40.0" text="-">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
-                         <Button layoutX="125.0" layoutY="15.0" mnemonicParsing="false" onAction="#openMoveCreatureModal" prefHeight="40.0" prefWidth="40.0" text="۝">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
-                         <Button layoutX="180.0" layoutY="15.0" mnemonicParsing="false" onAction="#openCleanEnclosureModal" prefHeight="40.0" prefWidth="40.0" text="z">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
-                         <Button layoutX="235.0" layoutY="15.0" mnemonicParsing="false" onAction="#openHealEnclosureModal" prefHeight="40.0" prefWidth="40.0" text="e">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
-                         <Button layoutX="290.0" layoutY="15.0" mnemonicParsing="false" onAction="#openUpgradeEnclosureModal" prefHeight="40.0" prefWidth="40.0" text="r">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
-                         <Button layoutX="345.0" layoutY="15.0" mnemonicParsing="false" onAction="#openFeedEnclosureModal" prefHeight="40.0" prefWidth="40.0" text="t">
-                             <font>
-                             	<Font name="System Bold" size="14.0" />
-                             </font>
-                         </Button>
+                  <ImageView fx:id="openBuyCreatureImage" onMouseClicked="#openBuyCreatureModal" fitHeight="40.0" fitWidth="40.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/add-creature.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openSellCreatureImage" onMouseClicked="#openSellCreatureModal" fitHeight="40.0" fitWidth="40.0" layoutX="70.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/sell-creature.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openMoveCreatureImage" onMouseClicked="#openMoveCreatureModal" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/move-creature.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openHealEnclosureImage" onMouseClicked="#openHealEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="180.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/heal-enclosure.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openFeedEnclosureImage" onMouseClicked="#openFeedEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="235.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/feed-creature.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openCleanEnclosureImage" onMouseClicked="#openCleanEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="290.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/clean-enclosure.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openUpgradeEnclosureImage" onMouseClicked="#openUpgradeEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="345.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/img/upgrade-enclosure.png" />
+                     </image>
+                  </ImageView>
 	                </children>
 	            </Pane>
             </children>
