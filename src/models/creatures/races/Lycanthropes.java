@@ -11,19 +11,19 @@ public class Lycanthropes extends Viviparous {
 	 * @param name
 	 * @param gender
 	 * @param weight
-	 * @param size
 	 */
 	public Lycanthropes(
 		String name, 
 		Gender gender, 
-		double weight, 
-		double size
+		int weight,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			Constants.Creature.Lycanthropes.SIZE,
+			age
 		);
 	}
 

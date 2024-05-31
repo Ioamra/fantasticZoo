@@ -12,6 +12,11 @@
     <children>
         <Pane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
          <children>
+            <Text fx:id="surfaceText" layoutX="50.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="700.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
             <Button fx:id="btnReturnToZoo" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#returnToZooVue" prefHeight="50.0" prefWidth="50.0" text="-">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -45,37 +50,37 @@
 	            </Pane>
 	            <Pane layoutY="605.0" prefHeight="70.0" prefWidth="400.0" style="-fx-background-color: #aaaaaa; -fx-border-color: white; -fx-border-width: 2px;">
 	                <children>
-                  <ImageView fx:id="openBuyCreatureImage" onMouseClicked="#openBuyCreatureModal" fitHeight="40.0" fitWidth="40.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openBuyCreatureImage" fitHeight="40.0" fitWidth="40.0" layoutX="15.0" layoutY="15.0" onMouseClicked="#openBuyCreatureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/add-creature.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="openSellCreatureImage" onMouseClicked="#openSellCreatureModal" fitHeight="40.0" fitWidth="40.0" layoutX="70.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openSellCreatureImage" fitHeight="40.0" fitWidth="40.0" layoutX="70.0" layoutY="15.0" onMouseClicked="#openSellCreatureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/sell-creature.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="openMoveCreatureImage" onMouseClicked="#openMoveCreatureModal" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openMoveCreatureImage" fitHeight="40.0" fitWidth="40.0" layoutX="125.0" layoutY="15.0" onMouseClicked="#openMoveCreatureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/move-creature.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="openHealEnclosureImage" onMouseClicked="#openHealEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="180.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openHealEnclosureImage" fitHeight="40.0" fitWidth="40.0" layoutX="180.0" layoutY="15.0" onMouseClicked="#openHealEnclosureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/heal-enclosure.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="openFeedEnclosureImage" onMouseClicked="#openFeedEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="235.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openFeedEnclosureImage" fitHeight="40.0" fitWidth="40.0" layoutX="235.0" layoutY="15.0" onMouseClicked="#openFeedEnclosureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/feed-creature.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="openCleanEnclosureImage" onMouseClicked="#openCleanEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="290.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openCleanEnclosureImage" fitHeight="40.0" fitWidth="40.0" layoutX="290.0" layoutY="15.0" onMouseClicked="#openCleanEnclosureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/clean-enclosure.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="openUpgradeEnclosureImage" onMouseClicked="#openUpgradeEnclosureModal" fitHeight="40.0" fitWidth="40.0" layoutX="345.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="openUpgradeEnclosureImage" fitHeight="40.0" fitWidth="40.0" layoutX="345.0" layoutY="15.0" onMouseClicked="#openUpgradeEnclosureModal" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/img/upgrade-enclosure.png" />
                      </image>

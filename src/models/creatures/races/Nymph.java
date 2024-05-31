@@ -11,19 +11,19 @@ public class Nymph extends Oviparous {
 	 * @param name
 	 * @param gender
 	 * @param weight
-	 * @param size
 	 */
 	public Nymph(
 		String name, 
-		Gender gender, 
-		double weight, 
-		double size
+		Gender gender,  
+		int weight,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			Constants.Creature.Nymph.SIZE,
+			age
 		);
 	}
 

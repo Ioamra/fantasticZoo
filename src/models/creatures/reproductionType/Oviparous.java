@@ -10,18 +10,21 @@ public abstract class Oviparous extends Creature {
 	 * @param gender
 	 * @param weight
 	 * @param size
+	 * @param age
 	 */
 	public Oviparous(
 		String name, 
 		Gender gender, 
-		double weight, 
-		double size
+		int weight, 
+		int size,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			size,
+			age
 		);
 	}
 	

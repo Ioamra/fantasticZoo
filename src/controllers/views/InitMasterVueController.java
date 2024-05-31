@@ -32,8 +32,8 @@ public class InitMasterVueController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> genderOptions = FXCollections.observableArrayList("M", "F");
-        genderChoiceBox.setItems(genderOptions);
+        genderChoiceBox.getItems().addAll("Homme", "Femme");
+        genderChoiceBox.setValue("Homme");
     }
 
     @FXML
@@ -41,7 +41,13 @@ public class InitMasterVueController implements Initializable {
         try {
             String playerName = playerNameField.getText();
             int age = Integer.parseInt(ageField.getText());
-            Master.Gender gender = Master.Gender.valueOf(genderChoiceBox.getValue());
+            
+            Master.Gender gender;
+            if (genderChoiceBox.getValue() == "Homme") {
+            	gender = Master.Gender.valueOf("M");
+            } else {
+            	gender = Master.Gender.valueOf("F");
+            }
 
             Master master = new Master(playerName, age, gender, Constants.Master.INITIAL_MONEY);
 

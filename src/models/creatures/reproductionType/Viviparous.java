@@ -16,14 +16,16 @@ public abstract class Viviparous extends Creature {
 	public Viviparous(
 		String name, 
 		Gender gender, 
-		double weight, 
-		double size
+		int weight, 
+		int size,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			size,
+			age
 		);
 	}
 	

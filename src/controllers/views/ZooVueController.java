@@ -118,7 +118,7 @@ public class ZooVueController {
             enclosureController.setEnclosure(enclosure);
             enclosureController.setDayCounter(dayCounter);
             enclosureController.setZoo(zoo);
-            enclosureController.showSideInfos();
+            enclosureController.initData();
 
             Stage stage = (Stage) nextDayButton.getScene().getWindow();
             Scene scene = new Scene(root);

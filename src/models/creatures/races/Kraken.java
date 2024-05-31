@@ -11,19 +11,19 @@ public class Kraken extends Oviparous {
 	 * @param name
 	 * @param gender
 	 * @param weight
-	 * @param size
 	 */
 	public Kraken(
 		String name, 
-		Gender gender, 
-		double weight, 
-		double size
+		Gender gender,  
+		int weight,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			Constants.Creature.Kraken.SIZE,
+			age
 		);
 	}
 

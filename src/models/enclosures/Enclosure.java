@@ -44,7 +44,12 @@ public abstract class Enclosure {
 	 * Add a creatures in the creature list.
 	 */
 	public void addCreature(Creature creature) {
-		
+		Creature[] creatureListTmp = new Creature[creatureList.length + 1];
+		 for (int i = 0; i < creatureList.length; i++) {
+			 creatureListTmp[i] = creatureList[i];
+		 }
+		 creatureListTmp[creatureList.length] = creature;
+		 setCreatureList(creatureListTmp);
 	}
 	
 	/**

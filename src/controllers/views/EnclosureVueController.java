@@ -22,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import models.creatures.Creature;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
 import models.enclosures.biomes.Aviary;
@@ -56,6 +57,8 @@ public class EnclosureVueController {
     private ImageView openCleanEnclosureImage;
     @FXML
     private ImageView openUpgradeEnclosureImage;
+    @FXML
+    private Text surfaceText;
 
     private Enclosure enclosure;
     private Zoo zoo;
@@ -71,6 +74,31 @@ public class EnclosureVueController {
     	openFeedEnclosureImage.setCursor(Cursor.HAND);
     	openCleanEnclosureImage.setCursor(Cursor.HAND);
     	openUpgradeEnclosureImage.setCursor(Cursor.HAND);
+    }
+    
+    public void initData() {
+    	int usedSurface = 0;
+		for (Creature creature: this.enclosure.getCreatureList()) {
+			usedSurface += creature.getSize();
+		}
+		surfaceText.setText("Surface utilisé: " + usedSurface + "/" + this.enclosure.getSurface());
+    	
+    	 if (this.enclosure instanceof UndefinedEnclosure) {
+    		 enclosureName.setText("Emplacement d'enclos");
+         } else if (this.enclosure instanceof Aviary) {
+        	 enclosureName.setText("Aviary " + this.enclosure.getName());
+         } else if (this.enclosure instanceof Terrestrial) {
+        	 enclosureName.setText("Terrestrial " + this.enclosure.getName());
+         } else if (this.enclosure instanceof Aquarium) {
+        	 enclosureName.setText("Aquarium " + this.enclosure.getName());
+         }
+        masterName.setText(this.zoo.getMaster().getName());
+        masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
+        
+        System.out.println("Liste des créatures dans l'enclos:");
+        for (Creature creature : enclosure.getCreatureList()) {
+            System.out.println(creature);
+        }
     }
     
     @FXML
@@ -104,7 +132,7 @@ public class EnclosureVueController {
             Parent root = loader.load();
 
             BuyCreatureModalController buyCreatureModalController = loader.getController();
-            buyCreatureModalController.setEnclosure(enclosure);
+            buyCreatureModalController.setEnclosure(this.enclosure);
             buyCreatureModalController.setEnclosureVueController(this);
             buyCreatureModalController.initData();
 
@@ -243,20 +271,5 @@ public class EnclosureVueController {
     
     public void setZoo(Zoo zooObject) {
     	this.zoo = zooObject;
-    }
-    
-
-    public void showSideInfos() {
-    	 if (this.enclosure instanceof UndefinedEnclosure) {
-    		 enclosureName.setText("Emplacement d'enclos");
-         } else if (this.enclosure instanceof Aviary) {
-        	 enclosureName.setText("Aviary " + this.enclosure.getName());
-         } else if (this.enclosure instanceof Terrestrial) {
-        	 enclosureName.setText("Terrestrial " + this.enclosure.getName());
-         } else if (this.enclosure instanceof Aquarium) {
-        	 enclosureName.setText("Aquarium " + this.enclosure.getName());
-         }
-        masterName.setText(this.zoo.getMaster().getName());
-        masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
     }
 }

@@ -11,19 +11,19 @@ public class Unicorn extends Viviparous {
 	 * @param name
 	 * @param gender
 	 * @param weight
-	 * @param size
 	 */
 	public Unicorn(
 		String name, 
 		Gender gender, 
-		double weight, 
-		double size
+		int weight,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			Constants.Creature.Unicorn.SIZE,
+			age
 		);
 	}
 

@@ -11,19 +11,19 @@ public class Phoenix extends Oviparous {
 	 * @param name
 	 * @param gender
 	 * @param weight
-	 * @param size
 	 */
 	public Phoenix(
 		String name, 
 		Gender gender, 
-		double weight, 
-		double size
+		int weight,
+		int age
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
-			size
+			Constants.Creature.Phoenix.SIZE,
+			age
 		);
 	}
 

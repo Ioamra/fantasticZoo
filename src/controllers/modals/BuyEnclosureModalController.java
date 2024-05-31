@@ -25,7 +25,7 @@ public class BuyEnclosureModalController {
 
     @FXML
     public void initialize() {
-    	enclosureTypeChoiceBox.getItems().addAll("Aquarium", "Aviary", "Terrestrial");
+    	enclosureTypeChoiceBox.getItems().addAll("Aquarium", "Volière", "Terrestre");
     }
 
     public void setLocation(int location) {
@@ -54,7 +54,7 @@ public class BuyEnclosureModalController {
             		Constants.Enclosure.Aquarium.INITIAL_SALINITY
                 );
                 break;
-            case "Aviary":
+            case "Volière":
                 enclosure = new Aviary(
             		location, 
             		name, 
@@ -63,7 +63,7 @@ public class BuyEnclosureModalController {
             		Constants.Enclosure.Aviary.HEIGHT_LVL_1
                 );
                 break;
-            case "Terrestrial":
+            case "Terrestre":
                 enclosure = new Terrestrial(
                 	location, 
                 	name, 

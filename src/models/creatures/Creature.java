@@ -9,8 +9,8 @@ public abstract class Creature {
 	
 	private String name;
 	private Gender gender;
-	private double weight;
-	private double size;
+	private int weight;
+	private int size;
 	protected int age;
 	private int hunger;
 	private boolean sleep;
@@ -25,18 +25,20 @@ public abstract class Creature {
 	 * @param gender
 	 * @param weight
 	 * @param size
+	 * @param age
 	 */
 	public Creature(
 		String name, 
 		Gender gender, 
-		double weight, 
-		double size
+		int weight, 
+		int size,
+		int age
 	) {
 		this.setName(name);
 		this.setGender(gender);
 		this.setWeight(weight);
 		this.setSize(size);
-		this.setAge(0);
+		this.setAge(age);
 		this.setHunger(Constants.Creature.MAX_HUNGER);
 		this.setStamina(Constants.Creature.MAX_STAMINA);
 		this.setSleep(false);
@@ -108,7 +110,7 @@ public abstract class Creature {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 
@@ -116,7 +118,7 @@ public abstract class Creature {
 		return size;
 	}
 
-	public void setSize(double size) {
+	public void setSize(int size) {
 		this.size = size;
 	}
 
