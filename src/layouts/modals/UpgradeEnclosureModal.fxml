@@ -27,6 +27,6 @@
         <Label fx:id="heightLabel" layoutX="35.0" layoutY="180.0" text="Hauteur :" textFill="WHITE" visible="false" />
         <TextField fx:id="heightField" layoutX="120.0" layoutY="180.0" prefWidth="200.0" promptText="Hauteur" visible="false" />
         
-        <Button layoutY="240.0" mnemonicParsing="false" onAction="#close" prefWidth="80.0" text="Fermer" textFill="BLACK" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="145.0" />
+        <Button layoutY="260.0" mnemonicParsing="false" onAction="#close" prefWidth="80.0" text="Fermer" textFill="BLACK" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="145.0" />
     </children>
 </AnchorPane>

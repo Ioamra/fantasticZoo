@@ -6,8 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.creatures.Creature;
 import models.creatures.Creature.Gender;
@@ -33,6 +35,16 @@ public class BuyCreatureModalController {
 	private ChoiceBox<String> creatureGenderChoiceBox;
 	@FXML
 	private TextField nameField;
+	@FXML
+	private Label heightLabel;
+	@FXML
+	private Text price;
+	@FXML
+	private Text dailyEarn;
+	@FXML
+	private Text surface;
+	@FXML
+	private Text height;
 
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
@@ -41,15 +53,75 @@ public class BuyCreatureModalController {
 	public void initialize() {
 		creatureGenderChoiceBox.getItems().addAll("Male", "Femelle" );
 		creatureGenderChoiceBox.setValue("Male");
+		creatureTypeChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            onCreatureTypeChange(newValue);
+        });
 	}
 	
 	public void initData() {
-		if (enclosure instanceof Aquarium) {
+		if (this.enclosure instanceof Aquarium) {
 			creatureTypeChoiceBox.getItems().addAll("Dragon", "Kraken", "Megalodon", "Sirène", "Nymph" );
-		} else if (enclosure instanceof Aviary) {
+			heightLabel.setText("Hauteur :");
+		} else if (this.enclosure instanceof Aviary) {
 			creatureTypeChoiceBox.getItems().addAll("Dragon", "Phénix" );
-		} else if (enclosure instanceof Terrestrial) {
+			heightLabel.setText("Hauteur :");
+		} else if (this.enclosure instanceof Terrestrial) {
 			creatureTypeChoiceBox.getItems().addAll("Dragon", "Loup-garou", "Nymph", "Licorne" );
+		}
+	}
+	
+	private void onCreatureTypeChange(String newCreatureType) {
+		switch (newCreatureType) {
+			case "Dragon":
+				price.setText(String.valueOf(Constants.Creature.Dragon.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Dragon.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Dragon.SIZE));
+				if (this.enclosure instanceof Aquarium || this.enclosure instanceof Aviary) {
+					height.setText(String.valueOf(Constants.Creature.Dragon.HEIGHT));					
+				}
+				break;
+			case "Kraken":
+				price.setText(String.valueOf(Constants.Creature.Kraken.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Kraken.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Kraken.SIZE));
+				height.setText(String.valueOf(Constants.Creature.Kraken.HEIGHT));
+				break;
+			case "Loup-garou":
+			price.setText(String.valueOf(Constants.Creature.Lycanthropes.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Lycanthropes.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Lycanthropes.SIZE));
+				break;
+			case "Megalodon":
+				price.setText(String.valueOf(Constants.Creature.Megalodon.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Megalodon.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Megalodon.SIZE));
+				height.setText(String.valueOf(Constants.Creature.Megalodon.HEIGHT));
+				break;
+			case "Sirène":
+				price.setText(String.valueOf(Constants.Creature.Mermaid.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Mermaid.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Mermaid.SIZE));
+				height.setText(String.valueOf(Constants.Creature.Mermaid.HEIGHT));
+				break;
+			case "Nymph":
+				price.setText(String.valueOf(Constants.Creature.Nymph.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Nymph.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Nymph.SIZE));
+				if (this.enclosure instanceof Aquarium) {
+					height.setText(String.valueOf(Constants.Creature.Nymph.HEIGHT));
+				}
+				break;
+			case "Phénix":
+				price.setText(String.valueOf(Constants.Creature.Phoenix.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Phoenix.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Phoenix.SIZE));
+				height.setText(String.valueOf(Constants.Creature.Phoenix.HEIGHT));
+				break;
+			case "Licorne":
+				price.setText(String.valueOf(Constants.Creature.Unicorn.ADD_PRICE));
+				dailyEarn.setText(String.valueOf(Constants.Creature.Unicorn.MONEY_GAIN));
+				surface.setText(String.valueOf(Constants.Creature.Unicorn.SIZE));
+				break;
 		}
 	}
 	
