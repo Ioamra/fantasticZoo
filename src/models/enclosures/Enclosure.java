@@ -56,7 +56,15 @@ public abstract class Enclosure {
 	 * Remove a creatures in the creature list.
 	 */
 	public void removeCreature(Creature creature) {
-		
+	    for (int i = 0; i < creatureList.length; i++) {
+	        if (creatureList[i].equals(creature)) {
+	        	Creature[] newCreatureList = new Creature[creatureList.length - 1];
+		        System.arraycopy(creatureList, 0, newCreatureList, 0, i);
+		        System.arraycopy(creatureList, i + 1, newCreatureList, i, creatureList.length - i - 1);
+		        creatureList = newCreatureList;
+		        break;
+	        }
+	    }
 	}
 
 	// Getters and Setters

@@ -45,7 +45,7 @@ public class Master {
 	}
 	
 	public void addCreatureInEnclosure(Enclosure enclosure, Creature creature) {
-		
+		enclosure.addCreature(creature);
 	}
 	
 	public void spendMoney(int moneySpend) {
