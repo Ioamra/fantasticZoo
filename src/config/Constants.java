@@ -24,4 +24,80 @@ public class Constants {
 			public static final int SURFACE_LVL_1 = 10;
 		}
 	}
+	
+	public static class Creature {
+		public static final int MAX_STAMINA = 100;
+		public static final int MAX_HUNGER = 100;
+		
+		public static class Dragon {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+		}
+
+		public static class Kraken {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+
+		public static class Lycanthropes {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+
+		public static class Megalodon {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+
+		public static class Mermaid {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+
+		public static class Nymph {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+
+		public static class Phoenix {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+
+		public static class Unicorn {
+			public static final int ADD_PRICE = 1000;
+			public static final int SELL_PRICE = 500;
+			public static final int MONEY_GAIN = 200;
+			public static final int MAX_HP = 10;
+			public static final int MAX_AGE = 12;
+			
+		}
+	}
 }

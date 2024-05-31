@@ -1,5 +1,7 @@
 package models.creatures;
 
+import config.Constants;
+
 public abstract class Creature {
 	
 	public enum Gender { M, F };
@@ -9,19 +11,12 @@ public abstract class Creature {
 	private Gender gender;
 	private double weight;
 	private double size;
-	private final int MAX_AGE;
-	private int age;
-	private final int MAX_HUNGER;
+	protected int age;
 	private int hunger;
 	private boolean sleep;
-	private final int MAX_STAMINA;
 	private int stamina;
 	private State state;
-	private final int MAX_HP;
 	private int hp;
-	private final int ADD_PRICE;
-	private final int SELL_PRICE;
-	private final int MONEY_GAIN;
 	
 	/**
 	 * Constructor to create a new creature with specified parameters.
@@ -30,44 +25,20 @@ public abstract class Creature {
 	 * @param gender
 	 * @param weight
 	 * @param size
-	 * @param MAX_AGE
-	 * @param MAX_HUNGER
-	 * @param MAX_STAMINA
-	 * @param MAX_HP
-	 * @param ADD_PRICE
-	 * @param SELL_PRICE
-	 * @param MAINTENANCE_PRICE
-	 * @param MONEY_GAIN
 	 */
 	public Creature(
 		String name, 
 		Gender gender, 
 		double weight, 
-		double size, 
-		int MAX_AGE, 
-		int MAX_HUNGER, 
-		int MAX_STAMINA, 
-		int MAX_HP, 
-		int ADD_PRICE, 
-		int SELL_PRICE, 
-		int MAINTENANCE_PRICE, 
-		int MONEY_GAIN
+		double size
 	) {
 		this.setName(name);
 		this.setGender(gender);
 		this.setWeight(weight);
 		this.setSize(size);
-		this.MAX_AGE = MAX_AGE;
-		this.MAX_HUNGER = MAX_HUNGER;
-		this.MAX_STAMINA = MAX_STAMINA;
-		this.MAX_HP = MAX_HP; 
-		this.ADD_PRICE = ADD_PRICE; 
-		this.SELL_PRICE = SELL_PRICE;
-		this.MONEY_GAIN = MONEY_GAIN;
 		this.setAge(0);
-		this.setHunger(MAX_HUNGER);
-		this.setStamina(MAX_STAMINA);
-		this.setHp(MAX_HP);
+		this.setHunger(Constants.Creature.MAX_HUNGER);
+		this.setStamina(Constants.Creature.MAX_STAMINA);
 		this.setSleep(false);
 		this.setState(State.HEALTHY);
 	}
@@ -76,14 +47,7 @@ public abstract class Creature {
 	 * Change the hunger to MAX_HUNGER.
 	 */
 	public void eat() {
-		this.setHunger(this.MAX_HUNGER);
-	}
-	
-	/**
-	 * Restores the creature's health points (HP) to its maximum value.
-	 */
-	public void heal() {
-		this.setHp(this.MAX_HP);
+		this.setHunger(Constants.Creature.MAX_HUNGER);
 	}
 	
 	/**
@@ -99,15 +63,16 @@ public abstract class Creature {
 	public void die() {
 		this.setState(State.DEAD);
 	}
+
+	/**
+	 * Restores the creature's health points (HP) to its maximum value.
+	 */
+	public abstract void heal();
 	
 	/**
 	 * Checks if the creature's age exceeds the maximum age limit and triggers death if so.
 	 */
-	public void checkAge() {
-		if (this.age > this.MAX_AGE) {
-			this.die();
-		}
-	}
+	public abstract void checkAge();
 	
 	/**
 	 * Produces a sound specific to the creature.
@@ -202,33 +167,4 @@ public abstract class Creature {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-
-	public int getMAX_AGE() {
-		return MAX_AGE;
-	}
-
-	public int getMAX_HUNGER() {
-		return MAX_HUNGER;
-	}
-
-	public int getMAX_STAMINA() {
-		return MAX_STAMINA;
-	}
-
-	public int getMAX_HP() {
-		return MAX_HP;
-	}
-
-	public int getADD_PRICE() {
-		return ADD_PRICE;
-	}
-
-	public int getSELL_PRICE() {
-		return SELL_PRICE;
-	}
-
-	public int getMONEY_GAIN() {
-		return MONEY_GAIN;
-	}
-
 }
