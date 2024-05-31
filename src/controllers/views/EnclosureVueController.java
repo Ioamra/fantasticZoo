@@ -94,11 +94,6 @@ public class EnclosureVueController {
          }
         masterName.setText(this.zoo.getMaster().getName());
         masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
-        
-        System.out.println("Liste des créatures dans l'enclos:");
-        for (Creature creature : enclosure.getCreatureList()) {
-            System.out.println(creature);
-        }
     }
     
     @FXML

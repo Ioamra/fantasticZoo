@@ -58,8 +58,9 @@ public class BuyCreatureModalController {
 	private void handleBuyCreature() {
 		String name = nameField.getText();
 		if (name == null || name.trim().isEmpty()) {
-	        Alert alert = new Alert(AlertType.ERROR);
+	        Alert alert = new Alert(AlertType.WARNING);
 	        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 	        alert.setHeaderText("Nom requis");
 	        alert.setContentText("Veuillez remplir un nom pour la créature.");
 	        alert.showAndWait();
@@ -67,8 +68,9 @@ public class BuyCreatureModalController {
 	    }
 		String selectedType = creatureTypeChoiceBox.getValue();
 		if (selectedType == null || selectedType.trim().isEmpty()) {
-	        Alert alert = new Alert(AlertType.ERROR);
+	        Alert alert = new Alert(AlertType.WARNING);
 	        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 	        alert.setHeaderText("Type de créature requis");
 	        alert.setContentText("Veuillez choisir un type de créature.");
 	        alert.showAndWait();
@@ -89,22 +91,25 @@ public class BuyCreatureModalController {
 		switch (selectedType) {
 			case "Dragon":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Dragon.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aquarium && ((Aquarium) this.enclosure).getDepth() < Constants.Creature.Dragon.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La profondeur de l'aquarium n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aviary && ((Aviary) this.enclosure).getHeight() < Constants.Creature.Dragon.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La hauteur de la volière n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -120,15 +125,17 @@ public class BuyCreatureModalController {
 				break;
 			case "Kraken":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Kraken.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aquarium && ((Aquarium) this.enclosure).getDepth() < Constants.Creature.Kraken.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La profondeur de l'aquarium n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -144,8 +151,9 @@ public class BuyCreatureModalController {
 				break;
 			case "Loup-garou":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Lycanthropes.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -161,15 +169,17 @@ public class BuyCreatureModalController {
 				break;
 			case "Megalodon":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Megalodon.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aquarium && ((Aquarium) this.enclosure).getDepth() < Constants.Creature.Megalodon.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La profondeur de l'aquarium n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -185,15 +195,17 @@ public class BuyCreatureModalController {
 				break;
 			case "Sirène":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Mermaid.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aquarium && ((Aquarium) this.enclosure).getDepth() < Constants.Creature.Mermaid.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La profondeur de l'aquarium n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -209,15 +221,17 @@ public class BuyCreatureModalController {
 				break;
 			case "Nymph":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Nymph.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aquarium && ((Aquarium) this.enclosure).getDepth() < Constants.Creature.Nymph.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La profondeur de l'aquarium n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -233,15 +247,17 @@ public class BuyCreatureModalController {
 				break;
 			case "Phénix":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Phoenix.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
 				}
 				if (this.enclosure instanceof Aviary && ((Aviary) this.enclosure).getHeight() < Constants.Creature.Phoenix.HEIGHT) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("La hauteur de la volière n'est pas suffisante pour cette créature.");
 			        alert.showAndWait();
 			        return;
@@ -257,8 +273,9 @@ public class BuyCreatureModalController {
 				break;
 			case "Licorne":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Unicorn.SIZE) {
-					Alert alert = new Alert(AlertType.ERROR);
+					Alert alert = new Alert(AlertType.WARNING);
 			        alert.setTitle("Erreur");
+        			alert.setHeaderText(null);
 			        alert.setContentText("Vous n'avez pas assez de place pour cette créature.");
 			        alert.showAndWait();
 			        return;
