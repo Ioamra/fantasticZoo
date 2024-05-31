@@ -11,17 +11,27 @@ public class Constants {
 		
 		public static class Aviary {
 			public static final int SURFACE_LVL_1 = 10;
-			public static final int INITIAL_HEIGHT = 3;
+			public static final int SURFACE_LVL_2 = 15;
+			public static final int SURFACE_LVL_3 = 20;
+			public static final int HEIGHT_LVL_1 = 3;
+			public static final int HEIGHT_LVL_2 = 4;
+			public static final int HEIGHT_LVL_3 = 5;
 		}
 		
 		public static class Aquarium {
 			public static final int SURFACE_LVL_1 = 10;
-			public static final int INITIAL_DEPTH = 3;
+			public static final int SURFACE_LVL_2 = 15;
+			public static final int SURFACE_LVL_3 = 20;
+			public static final int DEPTH_LVL_1 = 3;
+			public static final int DEPTH_LVL_2 = 4;
+			public static final int DEPTH_LVL_3 = 5;
 			public static final int INITIAL_SALINITY = 5;
 		}
 		
 		public static class Terrestrial {
 			public static final int SURFACE_LVL_1 = 10;
+			public static final int SURFACE_LVL_2 = 15;
+			public static final int SURFACE_LVL_3 = 20;
 		}
 	}
 	

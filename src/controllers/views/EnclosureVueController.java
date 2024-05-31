@@ -1,5 +1,15 @@
 package controllers.views;
 
+import java.io.IOException;
+
+import controllers.modals.BuyCreatureModalController;
+import controllers.modals.CleanEnclosureModalController;
+import controllers.modals.FeedEnclosureModalController;
+import controllers.modals.HealEnclosureModalController;
+import controllers.modals.MoveCreatureModalController;
+import controllers.modals.SellCreatureModalController;
+import controllers.modals.SellEnclosureModalController;
+import controllers.modals.UpgradeEnclosureModalController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
 import models.enclosures.biomes.Aviary;
@@ -87,37 +99,142 @@ public class EnclosureVueController {
     
     @FXML
     private void openBuyCreatureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/BuyCreatureModal.fxml"));
+            Parent root = loader.load();
+
+            BuyCreatureModalController buyCreatureModalController = loader.getController();
+            buyCreatureModalController.setEnclosure(enclosure);
+            buyCreatureModalController.setEnclosureVueController(this);
+            buyCreatureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void openSellCreatureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/SellCreatureModal.fxml"));
+            Parent root = loader.load();
+
+            SellCreatureModalController sellCreatureModalController = loader.getController();
+            sellCreatureModalController.setEnclosure(enclosure);
+            sellCreatureModalController.setEnclosureVueController(this);
+            sellCreatureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }   
     
     @FXML
     private void openMoveCreatureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/MoveCreatureModal.fxml"));
+            Parent root = loader.load();
+
+            MoveCreatureModalController moveCreatureModalController = loader.getController();
+            moveCreatureModalController.setEnclosure(enclosure);
+            moveCreatureModalController.setEnclosureVueController(this);
+            moveCreatureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
     private void openCleanEnclosureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/CleanEnclosureModal.fxml"));
+            Parent root = loader.load();
+
+            CleanEnclosureModalController cleanEnclosureModalController = loader.getController();
+            cleanEnclosureModalController.setEnclosure(enclosure);
+            cleanEnclosureModalController.setEnclosureVueController(this);
+            cleanEnclosureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
     private void openHealEnclosureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/HealEnclosureModal.fxml"));
+            Parent root = loader.load();
+
+            HealEnclosureModalController healEnclosureModalController = loader.getController();
+            healEnclosureModalController.setEnclosure(enclosure);
+            healEnclosureModalController.setEnclosureVueController(this);
+            healEnclosureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
     private void openUpgradeEnclosureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/UpgradeEnclosureModal.fxml"));
+            Parent root = loader.load();
+
+            UpgradeEnclosureModalController upgradeEnclosureModalController = loader.getController();
+            upgradeEnclosureModalController.setEnclosure(enclosure);
+            upgradeEnclosureModalController.setEnclosureVueController(this);
+            upgradeEnclosureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
     private void openFeedEnclosureModal() {
-    	
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/FeedEnclosureModal.fxml"));
+            Parent root = loader.load();
+
+            FeedEnclosureModalController feedEnclosureModalController = loader.getController();
+            feedEnclosureModalController.setEnclosure(enclosure);
+            feedEnclosureModalController.setEnclosureVueController(this);
+            feedEnclosureModalController.initData();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     public void setDayCounter(int dayCounter) {

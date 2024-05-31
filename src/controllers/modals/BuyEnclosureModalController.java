@@ -5,6 +5,7 @@ import controllers.views.ZooVueController;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
@@ -12,10 +13,10 @@ import models.enclosures.biomes.Aviary;
 import models.enclosures.biomes.Terrestrial;
 
 public class BuyEnclosureModalController {
-
+	@FXML
+	private AnchorPane anchorPane;
     @FXML
     private ChoiceBox<String> enclosureTypeChoiceBox;
-
     @FXML
     private TextField nameField;
 
@@ -49,7 +50,7 @@ public class BuyEnclosureModalController {
             		name, 
             		Constants.Enclosure.Aquarium.SURFACE_LVL_1, 
             		Constants.Enclosure.MAX_CLEANLINESS, 
-            		Constants.Enclosure.Aquarium.INITIAL_DEPTH, 
+            		Constants.Enclosure.Aquarium.DEPTH_LVL_1, 
             		Constants.Enclosure.Aquarium.INITIAL_SALINITY
                 );
                 break;
@@ -59,7 +60,7 @@ public class BuyEnclosureModalController {
             		name, 
             		Constants.Enclosure.Aviary.SURFACE_LVL_1, 
             		Constants.Enclosure.MAX_CLEANLINESS, 
-            		Constants.Enclosure.Aviary.INITIAL_HEIGHT
+            		Constants.Enclosure.Aviary.HEIGHT_LVL_1
                 );
                 break;
             case "Terrestrial":
@@ -78,4 +79,10 @@ public class BuyEnclosureModalController {
             stage.close();
         }
     }
+
+	@FXML
+	public void cancel() {
+		Stage stage = (Stage) anchorPane.getScene().getWindow();
+	    stage.close();
+	}
 }

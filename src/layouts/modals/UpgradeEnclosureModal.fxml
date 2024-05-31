@@ -8,23 +8,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modals.UpgradeEnclosureModalController">
+<AnchorPane fx:id="anchorPane" prefHeight="300.0" prefWidth="350.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modals.UpgradeEnclosureModalController">
     <children>
-        <Text fill="WHITE" layoutY="27.0" text="Améliorer Enclos" textAlignment="CENTER" wrappingWidth="400.0">
+        <Text fill="WHITE" layoutY="27.0" text="Améliorer Enclos" textAlignment="CENTER" wrappingWidth="350.0">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="enclosureTypeChoiceBox" layoutX="75.0" layoutY="60.0" prefWidth="250.0" onAction="#handleEnclosureTypeSelection" />
+        <ChoiceBox fx:id="enclosureTypeChoiceBox" layoutX="75.0" layoutY="60.0" onAction="#handleEnclosureTypeSelection" prefWidth="250.0" />
         
-        <Label layoutX="50.0" layoutY="100.0" text="Surface :" textFill="WHITE" />
-        <TextField fx:id="surfaceField" layoutX="120.0" layoutY="100.0" prefWidth="200.0" promptText="Surface" />
-        <Button layoutX="330.0" layoutY="100.0" mnemonicParsing="false" onAction="#upgradeSurface" text="+" textFill="BLACK" />
+        <Label layoutX="35.0" layoutY="104.0" text="Surface :" textFill="WHITE" />
+        <TextField fx:id="surfaceField" layoutX="130.0" layoutY="100.0" prefWidth="100.0" promptText="Surface" />
+        <Button layoutX="250.0" layoutY="100.0" mnemonicParsing="false" onAction="#upgradeSurface" text="+" textFill="BLACK" />
         
-        <Label fx:id="depthLabel" layoutX="50.0" layoutY="140.0" text="Profondeur :" textFill="WHITE" visible="false" />
+        <Label fx:id="depthLabel" layoutX="35.0" layoutY="140.0" text="Profondeur :" textFill="WHITE" visible="false" />
         <TextField fx:id="depthField" layoutX="120.0" layoutY="140.0" prefWidth="200.0" promptText="Profondeur" visible="false" />
         
-        <Label fx:id="heightLabel" layoutX="50.0" layoutY="180.0" text="Hauteur :" textFill="WHITE" visible="false" />
+        <Label fx:id="heightLabel" layoutX="35.0" layoutY="180.0" text="Hauteur :" textFill="WHITE" visible="false" />
         <TextField fx:id="heightField" layoutX="120.0" layoutY="180.0" prefWidth="200.0" promptText="Hauteur" visible="false" />
+        
+        <Button layoutY="240.0" mnemonicParsing="false" onAction="#close" prefWidth="80.0" text="Fermer" textFill="BLACK" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="145.0" />
     </children>
 </AnchorPane>

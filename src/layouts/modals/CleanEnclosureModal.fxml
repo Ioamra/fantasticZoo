@@ -5,14 +5,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modals.CleanEnclosureModalController">
+<AnchorPane fx:id="anchorPane" prefHeight="300.0" prefWidth="350.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modals.CleanEnclosureModalController">
     <children>
         <Text fill="WHITE" layoutY="27.0" text="Nettoyer Enclos" textAlignment="CENTER" wrappingWidth="350.0">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
-        </Text>
-        <Button layoutY="100.0" mnemonicParsing="false" onAction="#confirmCleaning" text="Confirmer" textFill="BLACK" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="200.0" />
-        <Button layoutY="100.0" mnemonicParsing="false" onAction="#cancelCleaning" text="Annuler" textFill="BLACK" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="70.0" />
+        </Text>        
+        <Button layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#confirmCleaning" prefWidth="80.0" text="Confirmer" textFill="BLACK" AnchorPane.leftAnchor="90.0" />
+		<Button layoutX="190.0" layoutY="240.0" mnemonicParsing="false" onAction="#cancel" prefWidth="80.0" text="Annuler" textFill="BLACK" AnchorPane.rightAnchor="90.0" />
     </children>
 </AnchorPane>
