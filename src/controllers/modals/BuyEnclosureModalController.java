@@ -3,8 +3,10 @@ package controllers.modals;
 import config.Constants;
 import controllers.views.ZooVueController;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.enclosures.Enclosure;
@@ -45,6 +47,14 @@ public class BuyEnclosureModalController {
 
         switch (selectedType) {
             case "Aquarium":
+            	if (Constants.Enclosure.Aquarium.PRICE > this.zooVueController.getZoo().getMaster().getMoney()) {
+            		Alert alert = new Alert(AlertType.WARNING);
+        	        alert.setTitle("Erreur");
+                	alert.setHeaderText(null);
+        	        alert.setContentText("Vous n'avez pas assez d'argent.");
+        	        alert.showAndWait();
+        	        return;
+            	}
                 enclosure = new Aquarium(
             		location, 
             		name, 
@@ -53,8 +63,18 @@ public class BuyEnclosureModalController {
             		Constants.Enclosure.Aquarium.DEPTH_LVL_1, 
             		Constants.Enclosure.Aquarium.INITIAL_SALINITY
                 );
+                this.zooVueController.addInConsole("L'aquarium " + name + " à été acheté pour " + Constants.Enclosure.Aquarium.PRICE + " $.");
+                this.zooVueController.getZoo().getMaster().spendMoney(Constants.Enclosure.Aquarium.PRICE);
                 break;
             case "Volière":
+            	if (Constants.Enclosure.Aviary.PRICE > this.zooVueController.getZoo().getMaster().getMoney()) {
+            		Alert alert = new Alert(AlertType.WARNING);
+        	        alert.setTitle("Erreur");
+                	alert.setHeaderText(null);
+        	        alert.setContentText("Vous n'avez pas assez d'argent.");
+        	        alert.showAndWait();
+        	        return;
+            	}
                 enclosure = new Aviary(
             		location, 
             		name, 
@@ -62,14 +82,26 @@ public class BuyEnclosureModalController {
             		Constants.Enclosure.MAX_CLEANLINESS, 
             		Constants.Enclosure.Aviary.HEIGHT_LVL_1
                 );
+                this.zooVueController.addInConsole("La volière " + name + " à été acheté pour " + Constants.Enclosure.Aviary.PRICE + " $.");
+                this.zooVueController.getZoo().getMaster().spendMoney(Constants.Enclosure.Aviary.PRICE);
                 break;
             case "Terrestre":
+            	if (Constants.Enclosure.Terrestrial.PRICE > this.zooVueController.getZoo().getMaster().getMoney()) {
+            		Alert alert = new Alert(AlertType.WARNING);
+        	        alert.setTitle("Erreur");
+                	alert.setHeaderText(null);
+        	        alert.setContentText("Vous n'avez pas assez d'argent.");
+        	        alert.showAndWait();
+        	        return;
+            	}
                 enclosure = new Terrestrial(
                 	location, 
                 	name, 
                 	Constants.Enclosure.Terrestrial.SURFACE_LVL_1, 
                 	Constants.Enclosure.MAX_CLEANLINESS
                 );
+                this.zooVueController.addInConsole("L'enclos terrestre " + name + " à été acheté pour " + Constants.Enclosure.Terrestrial.PRICE + " $.");
+                this.zooVueController.getZoo().getMaster().spendMoney(Constants.Enclosure.Terrestrial.PRICE);
                 break;
         }
 

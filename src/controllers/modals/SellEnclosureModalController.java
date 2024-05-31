@@ -2,6 +2,7 @@ package controllers.modals;
 
 import java.util.Optional;
 
+import config.Constants;
 import controllers.views.ZooVueController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
 import models.enclosures.biomes.Aviary;
+import models.enclosures.biomes.Terrestrial;
 import models.enclosures.biomes.UndefinedEnclosure;
 
 public class SellEnclosureModalController {
@@ -58,6 +60,16 @@ public class SellEnclosureModalController {
 	}
 	
 	private void sellEnclosure() {
+		if (this.enclosure instanceof Aquarium) {
+			this.zooVueController.addInConsole("L'aquarium " + this.enclosure.getName() + " à été vendu pour " + Constants.Enclosure.Aquarium.SELL_PRICE + " $.");
+			this.zooVueController.getZoo().getMaster().earnMoney(Constants.Enclosure.Aquarium.SELL_PRICE);
+		} else if (this.enclosure instanceof Aviary) {
+			this.zooVueController.addInConsole("La volière " + this.enclosure.getName() + " à été vendu pour " + Constants.Enclosure.Aviary.SELL_PRICE + " $.");
+			this.zooVueController.getZoo().getMaster().earnMoney(Constants.Enclosure.Aviary.SELL_PRICE);
+		} else if (this.enclosure instanceof Terrestrial) {
+			this.zooVueController.addInConsole("L'enclos terrestre " + this.enclosure.getName() + " à été vendu pour " + Constants.Enclosure.Terrestrial.SELL_PRICE + " $.");
+			this.zooVueController.getZoo().getMaster().earnMoney(Constants.Enclosure.Terrestrial.SELL_PRICE);
+		}
 		this.zooVueController.updateEnclosure(new UndefinedEnclosure(this.enclosure.getPosition()));
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();

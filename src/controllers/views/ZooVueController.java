@@ -78,6 +78,7 @@ public class ZooVueController {
     private int nbEnclosure = 9;
     private int dayCounter;
     private Zoo zoo;
+    private String console = "";
 
     @FXML
     public void initialize() {
@@ -91,6 +92,14 @@ public class ZooVueController {
         enclosureSellOrBuyButton8.setCursor(Cursor.HAND);
         enclosureSellOrBuyButton9.setCursor(Cursor.HAND);
         nextDayButton.setCursor(Cursor.HAND);
+    }
+    
+    public void updateData() {
+        dayLabel.setText("Jour " + dayCounter);
+        zooNameText.setText(this.zoo.getName());
+        masterName.setText(this.zoo.getMaster().getName());
+        masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
+        consoleText.setText(this.console);
     }
     
     @FXML
@@ -118,7 +127,7 @@ public class ZooVueController {
             enclosureController.setEnclosure(enclosure);
             enclosureController.setDayCounter(dayCounter);
             enclosureController.setZoo(zoo);
-            enclosureController.initData();
+            enclosureController.updateData();
 
             Stage stage = (Stage) nextDayButton.getScene().getWindow();
             Scene scene = new Scene(root);
@@ -149,7 +158,7 @@ public class ZooVueController {
         this.zoo = new Zoo(zooName, master, nbEnclosure, enclosures);
         updateEnclosureStatus();
         this.setDayCounter(1);
-        this.showSideInfos();
+        this.updateData();
     }
     
     private void openBuyEnclosureModal(int location) {
@@ -195,6 +204,7 @@ public class ZooVueController {
     
     public void updateEnclosure(Enclosure enclosure) {
     	zoo.getEnclosureList()[enclosure.getPosition()] = enclosure;
+    	this.updateData();
     }
 
     public void updateEnclosureStatus() {
@@ -227,11 +237,8 @@ public class ZooVueController {
         }
     }
     
-    public void showSideInfos() {
-        dayLabel.setText("Jour " + dayCounter);
-        zooNameText.setText(this.zoo.getName());
-        masterName.setText(this.zoo.getMaster().getName());
-        masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
+    public void addInConsole(String text) {
+    	this.console += "\n"+ text;
     }
     
     public Zoo getZoo() {

@@ -63,6 +63,7 @@ public class EnclosureVueController {
     private Enclosure enclosure;
     private Zoo zoo;
     private int dayCounter;
+    private String console = "";
     
     @FXML
     public void initialize() {
@@ -76,7 +77,7 @@ public class EnclosureVueController {
     	openUpgradeEnclosureImage.setCursor(Cursor.HAND);
     }
     
-    public void initData() {
+    public void updateData() {
     	int usedSurface = 0;
 		for (Creature creature: this.enclosure.getCreatureList()) {
 			usedSurface += creature.getSize();
@@ -94,6 +95,7 @@ public class EnclosureVueController {
          }
         masterName.setText(this.zoo.getMaster().getName());
         masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
+        consoleText.setText(this.console);
     }
     
     @FXML
@@ -107,7 +109,7 @@ public class EnclosureVueController {
 	        zooController.setZoo(this.zoo);
 	        zooController.updateEnclosureStatus();
 	        zooController.setDayCounter(dayCounter);
-	        zooController.showSideInfos();
+	        zooController.updateData();
 
 	        Scene scene = btnReturnToZoo.getScene();
 	        scene.setRoot(root);
@@ -260,8 +262,16 @@ public class EnclosureVueController {
         }
     }
     
+    public void addInConsole(String text) {
+    	this.console += "\n"+ text;
+    }
+    
     public void setDayCounter(int dayCounter) {
         this.dayCounter = dayCounter;
+    }
+    
+    public Zoo getZoo() {
+    	return this.zoo;
     }
     
     public void setZoo(Zoo zooObject) {

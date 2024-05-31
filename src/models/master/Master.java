@@ -48,6 +48,14 @@ public class Master {
 		
 	}
 	
+	public void spendMoney(int moneySpend) {
+		this.setMoney(this.getMoney() - moneySpend);
+	}
+
+	public void earnMoney(int earnedMoney) {
+		this.setMoney(this.getMoney() + earnedMoney);
+	}
+	
 	// Getters and Setters
 	
 	public String getName() {

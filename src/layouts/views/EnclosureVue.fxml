@@ -33,7 +33,7 @@
                         </font>
                     </Text>
                     </Pane>
-            	<Text fx:id="consoleText" layoutX="20.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="360.0" />
+            	<Text fx:id="consoleText" fill="WHITE" layoutX="20.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="360.0" />
                 <Pane layoutY="557.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #aaaaaa; -fx-border-color: white; -fx-border-width: 2px;">
                <children>
                   <Text fx:id="masterName" layoutX="20.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0">

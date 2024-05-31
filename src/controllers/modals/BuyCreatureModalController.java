@@ -192,6 +192,8 @@ public class BuyCreatureModalController {
 							0
 						)
 					);
+				this.enclosureVueController.addInConsole("Le dragon " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Dragon.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Dragon.ADD_PRICE);
 				break;
 			case "Kraken":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Kraken.SIZE) {
@@ -218,6 +220,8 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("Le kraken " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Kraken.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Kraken.ADD_PRICE);
 				break;
 			case "Loup-garou":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Lycanthropes.SIZE) {
@@ -236,6 +240,8 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("Le loup-garou " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Lycanthropes.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Lycanthropes.ADD_PRICE);
 				break;
 			case "Megalodon":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Megalodon.SIZE) {
@@ -262,6 +268,8 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("Le megalodon " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Megalodon.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Megalodon.ADD_PRICE);
 				break;
 			case "Sirène":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Mermaid.SIZE) {
@@ -288,6 +296,8 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("La sirène " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Mermaid.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Mermaid.ADD_PRICE);
 				break;
 			case "Nymph":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Nymph.SIZE) {
@@ -314,6 +324,8 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("La nymph " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Nymph.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Nymph.ADD_PRICE);
 				break;
 			case "Phénix":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Phoenix.SIZE) {
@@ -340,6 +352,8 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("Le phénix " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Phoenix.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Phoenix.ADD_PRICE);
 				break;
 			case "Licorne":
 				if (this.enclosure.getSurface() - usedSurface < Constants.Creature.Unicorn.SIZE) {
@@ -358,10 +372,12 @@ public class BuyCreatureModalController {
 								0
 						)
 					);
+				this.enclosureVueController.addInConsole("La licorne " + name + " (" + gender + ") à été acheté pour " + Constants.Creature.Unicorn.ADD_PRICE + " $.");
+				this.enclosureVueController.getZoo().getMaster().spendMoney(Constants.Creature.Unicorn.ADD_PRICE);
 				break;
 			}
 		this.enclosureVueController.setEnclosure(this.enclosure);
-		this.enclosureVueController.initData();
+		this.enclosureVueController.updateData();
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}

@@ -10,6 +10,8 @@ public class Constants {
 		
 		
 		public static class Aviary {
+			public static final int PRICE = 1000;
+			public static final int SELL_PRICE = 500;
 			public static final int SURFACE_LVL_1 = 10;
 			public static final int SURFACE_LVL_2 = 15;
 			public static final int SURFACE_LVL_3 = 20;
@@ -19,6 +21,8 @@ public class Constants {
 		}
 		
 		public static class Aquarium {
+			public static final int PRICE = 1000;
+			public static final int SELL_PRICE = 500;
 			public static final int SURFACE_LVL_1 = 10;
 			public static final int SURFACE_LVL_2 = 15;
 			public static final int SURFACE_LVL_3 = 20;
@@ -29,6 +33,8 @@ public class Constants {
 		}
 		
 		public static class Terrestrial {
+			public static final int PRICE = 1000;
+			public static final int SELL_PRICE = 500;
 			public static final int SURFACE_LVL_1 = 10;
 			public static final int SURFACE_LVL_2 = 15;
 			public static final int SURFACE_LVL_3 = 20;
