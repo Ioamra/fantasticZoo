@@ -28,8 +28,6 @@
         <Text fx:id="dailyEarn" fill="WHITE" layoutX="120.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0" />
         <Text fx:id="surface" fill="WHITE" layoutX="120.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0" />
         <Text fx:id="height" fill="WHITE" layoutX="120.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0" />
-     
-        
         <Button layoutX="80.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleBuyCreature" prefWidth="80.0" text="Acheter" textFill="BLACK" AnchorPane.leftAnchor="90.0" />
 		<Button layoutX="190.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancel" prefWidth="80.0" text="Annuler" textFill="BLACK" AnchorPane.rightAnchor="90.0" />
     </children>

@@ -9,8 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import models.master.Master;
 
@@ -28,7 +30,7 @@ public class InitMasterVueController implements Initializable {
     @FXML
     private ChoiceBox<String> genderChoiceBox;
     @FXML
-    private TextField zooName;
+    private TextField zooNameField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,6 +43,24 @@ public class InitMasterVueController implements Initializable {
         try {
             String playerName = playerNameField.getText();
             int age = Integer.parseInt(ageField.getText());
+            String zooName = zooNameField.getText();
+            
+            if (playerName == null || playerName.trim().isEmpty()) {
+            	Alert alert = new Alert(AlertType.WARNING);
+    	        alert.setTitle("Erreur");
+    			alert.setHeaderText(null);
+    	        alert.setContentText("Veuillez entrer un nom valide.");
+    	        alert.showAndWait();
+    	        return;
+            }
+            if (zooName == null || zooName.trim().isEmpty()) {
+            	Alert alert = new Alert(AlertType.WARNING);
+    	        alert.setTitle("Erreur");
+    			alert.setHeaderText(null);
+    	        alert.setContentText("Veuillez entrer un nom de zoo valide.");
+    	        alert.showAndWait();
+    	        return;
+            }
             
             Master.Gender gender;
             if (genderChoiceBox.getValue() == "Homme") {
@@ -55,7 +75,7 @@ public class InitMasterVueController implements Initializable {
             Parent root = loader.load();
 
             ZooVueController zooController = loader.getController();
-            zooController.initMasterAndZoo(zooName.getText(), master);
+            zooController.initMasterAndZoo(zooName, master);
 
             Stage stage = (Stage) playerNameField.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -63,7 +83,11 @@ public class InitMasterVueController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {
-            System.out.println("Veuillez entrer un âge valide.");
+        	Alert alert = new Alert(AlertType.WARNING);
+	        alert.setTitle("Erreur");
+			alert.setHeaderText(null);
+	        alert.setContentText("Veuillez entrer un âge valide.");
+	        alert.showAndWait();
         }
     }
 }

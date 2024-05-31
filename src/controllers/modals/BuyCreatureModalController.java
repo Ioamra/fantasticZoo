@@ -132,8 +132,7 @@ public class BuyCreatureModalController {
 		if (name == null || name.trim().isEmpty()) {
 	        Alert alert = new Alert(AlertType.WARNING);
 	        alert.setTitle("Erreur");
-        			alert.setHeaderText(null);
-	        alert.setHeaderText("Nom requis");
+        	alert.setHeaderText(null);
 	        alert.setContentText("Veuillez remplir un nom pour la créature.");
 	        alert.showAndWait();
 	        return;
@@ -142,8 +141,7 @@ public class BuyCreatureModalController {
 		if (selectedType == null || selectedType.trim().isEmpty()) {
 	        Alert alert = new Alert(AlertType.WARNING);
 	        alert.setTitle("Erreur");
-        			alert.setHeaderText(null);
-	        alert.setHeaderText("Type de créature requis");
+        	alert.setHeaderText(null);
 	        alert.setContentText("Veuillez choisir un type de créature.");
 	        alert.showAndWait();
 	        return;
