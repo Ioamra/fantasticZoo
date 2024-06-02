@@ -1,7 +1,9 @@
 package controllers.modals;
 
+import config.Constants;
 import controllers.views.EnclosureVueController;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.enclosures.Enclosure;
@@ -14,13 +16,23 @@ public class CleanEnclosureModalController {
 	private EnclosureVueController enclosureVueController;
 	
 
-	public void initData() {
-		
-	}
 	
 	@FXML
 	public void confirmCleaning() {
-		
+		if (Constants.Enclosure.CLEAN_PRICE > this.enclosureVueController.getZoo().getMaster().getMoney()) {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+			alert.setTitle("Erreur");
+			alert.setHeaderText(null);
+			alert.setContentText("Vous n'avez pas assez d'argent.");
+			alert.showAndWait();
+			return;
+		}
+		this.enclosureVueController.addInConsole("L'enclos à été nettoyé pour " + Constants.Enclosure.CLEAN_PRICE + " $." );
+		this.enclosure.clean();
+		this.enclosureVueController.setEnclosure(this.enclosure);
+		this.enclosureVueController.updateData();
+		Stage stage = (Stage) anchorPane.getScene().getWindow();
+		stage.close();
 	}
 	
 	@FXML

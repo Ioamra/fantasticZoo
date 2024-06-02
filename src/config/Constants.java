@@ -7,6 +7,9 @@ public class Constants {
 	
 	public static class Enclosure {
 		public static final int MAX_CLEANLINESS = 100;
+		public static final int CLEAN_PRICE = 1000;
+		public static final int FEED_PRICE = 1000;
+		public static final int HEAL_PRICE = 1000;
 		
 		
 		public static class Aviary {

@@ -191,7 +191,7 @@ public class EnclosureVueController {
             CleanEnclosureModalController cleanEnclosureModalController = loader.getController();
             cleanEnclosureModalController.setEnclosure(enclosure);
             cleanEnclosureModalController.setEnclosureVueController(this);
-            cleanEnclosureModalController.initData();
+
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -211,7 +211,7 @@ public class EnclosureVueController {
             HealEnclosureModalController healEnclosureModalController = loader.getController();
             healEnclosureModalController.setEnclosure(enclosure);
             healEnclosureModalController.setEnclosureVueController(this);
-            healEnclosureModalController.initData();
+
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -251,7 +251,7 @@ public class EnclosureVueController {
             FeedEnclosureModalController feedEnclosureModalController = loader.getController();
             feedEnclosureModalController.setEnclosure(enclosure);
             feedEnclosureModalController.setEnclosureVueController(this);
-            feedEnclosureModalController.initData();
+
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));

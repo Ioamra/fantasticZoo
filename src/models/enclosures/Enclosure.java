@@ -1,6 +1,8 @@
 package models.enclosures;
 
+import config.Constants;
 import models.creatures.Creature;
+
 
 public abstract class Enclosure {
 	
@@ -39,7 +41,23 @@ public abstract class Enclosure {
 			creature.eat();
 		}
 	}
-	
+
+	/**
+	 * set the Cleanliness of the enclosure to 100
+	 */
+	public void clean() {
+		this.setCleanliness(Constants.Enclosure.MAX_CLEANLINESS);
+	}
+
+	/**
+	 * Heal all creatures in the creature list.
+	 */
+	public void healAll() {
+		for (Creature creature: creatureList) {
+			creature.heal();
+		}
+	}
+
 	/**
 	 * Add a creatures in the creature list.
 	 */

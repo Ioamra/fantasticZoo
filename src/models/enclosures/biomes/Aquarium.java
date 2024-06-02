@@ -34,7 +34,7 @@ public class Aquarium extends Enclosure {
 		this.setDepth(depth);
 		this.setSalinity(salinity);
 	}
-	
+
 	// Getters and Setters
 	
 	public int getDepth() {
