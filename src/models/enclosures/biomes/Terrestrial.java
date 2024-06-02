@@ -7,15 +7,15 @@ import models.enclosures.Enclosure;
  */
 public class Terrestrial extends Enclosure {
 
-	/**
-	 * Constructor to create a new terrestrial enclosure with specified parameters.
-	 * 
-	 * @param position
-	 * @param name
-	 * @param surface
-	 * @param cleanliness
-	 */
-	public Terrestrial(
+    /**
+     * Constructor to create a new terrestrial enclosure with specified parameters.
+     *
+     * @param position    the position
+     * @param name        the name
+     * @param surface     the surface
+     * @param cleanliness the cleanliness
+     */
+    public Terrestrial(
 		int position,
 		String name,
 		int surface,

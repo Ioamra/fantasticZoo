@@ -8,14 +8,15 @@ import models.creatures.reproductionType.Viviparous;
  */
 public class Megalodon extends Viviparous {
 
-	/**
-	 * Constructor to create a new megalodon with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Megalodon(
+    /**
+     * Constructor to create a new megalodon with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Megalodon(
 		String name, 
 		Gender gender,  
 		int weight,

@@ -9,16 +9,16 @@ public class Aviary extends Enclosure {
 	
 	private int height;
 
-	/**
-	 * Constructor to create a new aviary enclosure with specified parameters.
-	 * 
-	 * @param position
-	 * @param name
-	 * @param surface
-	 * @param cleanliness
-	 * @param height
-	 */
-	public Aviary(
+    /**
+     * Constructor to create a new aviary enclosure with specified parameters.
+     *
+     * @param position    the position
+     * @param name        the name
+     * @param surface     the surface
+     * @param cleanliness the cleanliness
+     * @param height      the height
+     */
+    public Aviary(
 		int position,
 		String name,
 		int surface,
@@ -33,21 +33,31 @@ public class Aviary extends Enclosure {
 		);
 		this.setHeight(height);
 	}
-	
-	/**
-	 * Cleans the roof of the aviary.
-	 */
-	public void cleanRoof() {
+
+    /**
+     * Cleans the roof of the aviary.
+     */
+    public void cleanRoof() {
 		
 	}
 	
 	// Getters and Setters
 
-	public int getHeight() {
+    /**
+     * Gets height.
+     *
+     * @return the height
+     */
+    public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(int height) {
+    /**
+     * Sets height.
+     *
+     * @param height the height
+     */
+    public void setHeight(int height) {
 		this.height = height;
 	}
 

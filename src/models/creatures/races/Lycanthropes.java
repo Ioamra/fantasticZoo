@@ -8,14 +8,15 @@ import models.creatures.reproductionType.Viviparous;
  */
 public class Lycanthropes extends Viviparous {
 
-	/**
-	 * Constructor to create a new lycanthropes with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Lycanthropes(
+    /**
+     * Constructor to create a new lycanthropes with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Lycanthropes(
 		String name, 
 		Gender gender, 
 		int weight,

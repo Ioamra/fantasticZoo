@@ -8,14 +8,15 @@ import models.creatures.reproductionType.Viviparous;
  */
 public class Mermaid extends Viviparous {
 
-	/**
-	 * Constructor to create a new mermaid with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Mermaid(
+    /**
+     * Constructor to create a new mermaid with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Mermaid(
 		String name, 
 		Gender gender,  
 		int weight,

@@ -2,19 +2,21 @@ package models.creatures.races;
 
 import config.Constants;
 import models.creatures.reproductionType.Oviparous;
+
 /**
  * Represents a phoenix, which is an oviparous creature.
  */
 public class Phoenix extends Oviparous {
 
-	/**
-	 * Constructor to create a new phoenix with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Phoenix(
+    /**
+     * Constructor to create a new phoenix with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Phoenix(
 		String name, 
 		Gender gender, 
 		int weight,

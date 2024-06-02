@@ -19,10 +19,10 @@ public class HealEnclosureModalController {
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
 
-	/**
-	 * Heals all creatures in the enclosure.
-	 */
-	@FXML
+    /**
+     * Heals all creatures in the enclosure.
+     */
+    @FXML
 	public void healAllCreatures() {
 		if (Constants.Enclosure.HEAL_PRICE > this.enclosureVueController.getZoo().getMaster().getMoney()) {
 			Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -40,30 +40,30 @@ public class HealEnclosureModalController {
 		stage.close();
 	}
 
-	/**
-	 * Cancels the healing process for the enclosure.
-	 */
-	@FXML
+    /**
+     * Cancels the healing process for the enclosure.
+     */
+    @FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
 
-	/**
-	 * Sets the enclosure for this controller.
-	 *
-	 * @param enclosure The enclosure to be set.
-	 */
-	public void setEnclosure(Enclosure enclosure) {
+    /**
+     * Sets the enclosure for this controller.
+     *
+     * @param enclosure The enclosure to be set.
+     */
+    public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
 
-	/**
-	 * Sets the enclosure view controller for this controller.
-	 *
-	 * @param enclosureVueController The enclosure view controller to be set.
-	 */
-	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
+    /**
+     * Sets the enclosure view controller for this controller.
+     *
+     * @param enclosureVueController The enclosure view controller to be set.
+     */
+    public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}
 }

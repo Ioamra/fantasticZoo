@@ -8,14 +8,15 @@ import models.creatures.reproductionType.Oviparous;
  */
 public class Nymph extends Oviparous {
 
-	/**
-	 * Constructor to create a new nymph with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Nymph(
+    /**
+     * Constructor to create a new nymph with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Nymph(
 		String name, 
 		Gender gender,  
 		int weight,

@@ -43,7 +43,7 @@ public class UpgradeEnclosureModalController {
     /**
      * Initializes the data for the upgrade enclosure modal.
      */
-	public void initData() {
+    public void initData() {
 		
 	}
 	
@@ -101,13 +101,13 @@ public class UpgradeEnclosureModalController {
         String surface = surfaceField.getText();
         System.out.println("Surface améliorée à : " + surface);
     }
-    
+
     /**
      * Sets the enclosure for this controller.
      *
      * @param enclosure The enclosure to be set.
      */
-	public void setEnclosure(Enclosure enclosure) {
+    public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
 
@@ -116,7 +116,7 @@ public class UpgradeEnclosureModalController {
      *
      * @param enclosureVueController The enclosure view controller to be set.
      */
-	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
+    public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}
 }

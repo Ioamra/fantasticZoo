@@ -1,0 +1,14 @@
+module:fantasticZoo
+application
+config
+controllers.modals
+controllers.views
+models.creatures
+models.creatures.behaviors
+models.creatures.eggs
+models.creatures.races
+models.creatures.reproductionType
+models.enclosures
+models.enclosures.biomes
+models.master
+models.zoo

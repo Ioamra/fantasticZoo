@@ -70,7 +70,7 @@ public class EnclosureVueController {
                 creature13, creature14, creature15, creature16
         );
     }
-    
+
     /**
      * Updates the displayed data for the enclosure.
      */
@@ -343,7 +343,7 @@ public class EnclosureVueController {
             e.printStackTrace();
         }
     }
-    
+
     /**
      * Adds text to the console display.
      *
@@ -352,7 +352,7 @@ public class EnclosureVueController {
     public void addInConsole(String text) {
     	this.console += "\n"+ text;
     }
-    
+
     /**
      * Sets the day counter for the zoo.
      *
@@ -370,7 +370,7 @@ public class EnclosureVueController {
     public Zoo getZoo() {
     	return this.zoo;
     }
-    
+
     /**
      * Sets the zoo object.
      *
@@ -379,7 +379,7 @@ public class EnclosureVueController {
     public void setZoo(Zoo zooObject) {
     	this.zoo = zooObject;
     }
-    
+
     /**
      * Sets the enclosure for this controller.
      *

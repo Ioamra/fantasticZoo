@@ -13,15 +13,15 @@ public class Zoo {
 	private final int MAX_ENCLOSURE;
 	private Enclosure[] enclosureList;
 
-	/**
-	 * Constructor to create a new zoo with specified parameters.
-	 * 
-	 * @param name
-	 * @param master
-	 * @param MAX_ENCLOSURE
-	 * @param enclosureList
-	 */
-	public Zoo(
+    /**
+     * Constructor to create a new zoo with specified parameters.
+     *
+     * @param name          the name
+     * @param master        the master
+     * @param MAX_ENCLOSURE the max enclosure
+     * @param enclosureList the enclosure list
+     */
+    public Zoo(
 		String name,
 		Master master,
 		int MAX_ENCLOSURE,
@@ -34,32 +34,67 @@ public class Zoo {
 	}
 
 	// Getters and Setters
-	
-	public String getName() {
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+    public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
+    public void setName(String name) {
 		this.name = name;
 	}
 
-	public Master getMaster() {
+    /**
+     * Gets master.
+     *
+     * @return the master
+     */
+    public Master getMaster() {
 		return master;
 	}
 
-	public void setMaster(Master master) {
+    /**
+     * Sets master.
+     *
+     * @param master the master
+     */
+    public void setMaster(Master master) {
 		this.master = master;
 	}
 
-	public Enclosure[] getEnclosureList() {
+    /**
+     * Get enclosure list enclosure [ ].
+     *
+     * @return the enclosure [ ]
+     */
+    public Enclosure[] getEnclosureList() {
 		return enclosureList;
 	}
 
-	public void setEnclosureList(Enclosure[] enclosureList) {
+    /**
+     * Sets enclosure list.
+     *
+     * @param enclosureList the enclosure list
+     */
+    public void setEnclosureList(Enclosure[] enclosureList) {
 		this.enclosureList = enclosureList;
 	}
 
-	public int getMAX_ENCLOSURE() {
+    /**
+     * Gets max enclosure.
+     *
+     * @return the max enclosure
+     */
+    public int getMAX_ENCLOSURE() {
 		return MAX_ENCLOSURE;
 	}
 }

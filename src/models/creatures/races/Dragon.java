@@ -8,14 +8,15 @@ import models.creatures.reproductionType.Oviparous;
  */
 public class Dragon extends Oviparous {
 
-	/**
-	 * Constructor to create a new dragon with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Dragon(
+    /**
+     * Constructor to create a new dragon with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Dragon(
 		String name, 
 		Gender gender,  
 		int weight,

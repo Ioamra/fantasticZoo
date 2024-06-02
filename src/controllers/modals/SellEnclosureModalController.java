@@ -33,10 +33,10 @@ public class SellEnclosureModalController {
 
     private Enclosure enclosure;
 	private ZooVueController zooVueController;
-	
-	/**
-	 * Initializes the data for the sell enclosure modal.
-	 */
+
+    /**
+     * Initializes the data for the sell enclosure modal.
+     */
     public void initData() {
 		if (this.enclosure instanceof Aquarium) {
 			depthOrHeightLabel.setText("Profondeur :");
@@ -89,29 +89,29 @@ public class SellEnclosureModalController {
 	    stage.close();
 	}
 
-	/**
-	 * Cancels the process of selling an enclosure.
-	 */
-	@FXML
+    /**
+     * Cancels the process of selling an enclosure.
+     */
+    @FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
 
-	/**
-	 * Sets the enclosure for this controller.
-	 *
-	 * @param enclosure The enclosure to be set.
-	 */
+    /**
+     * Sets the enclosure for this controller.
+     *
+     * @param enclosure The enclosure to be set.
+     */
     public void setEnclosure(Enclosure enclosure) {
         this.enclosure = enclosure;
     }
-    
-	/**
-	 * Sets the zoo view controller for this controller.
-	 *
-	 * @param zooVueController The zoo view controller to be set.
-	 */
+
+    /**
+     * Sets the zoo view controller for this controller.
+     *
+     * @param zooVueController The zoo view controller to be set.
+     */
     public void setZooVueController(ZooVueController zooVueController) {
         this.zooVueController = zooVueController;
     }

@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.Parent;
 
 
+/**
+ * The type Main.
+ */
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
@@ -21,8 +24,13 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void main(String[] args) {
+
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
 		launch(args);
 	}
 }

@@ -1,20 +1,21 @@
 package models.creatures.reproductionType;
 import models.creatures.Creature;
+
 /**
  * Represents an oviparous creature, which reproduces by laying eggs.
  */
 public abstract class Oviparous extends Creature {
-	
-	/**
-	 * Constructor to create a new oviparous creature with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 * @param size
-	 * @param age
-	 */
-	public Oviparous(
+
+    /**
+     * Constructor to create a new oviparous creature with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param size   the size
+     * @param age    the age
+     */
+    public Oviparous(
 		String name, 
 		Gender gender, 
 		int weight, 
@@ -39,10 +40,10 @@ public abstract class Oviparous extends Creature {
 		
 	}
 
-	/**
-	 * Oviparous creatures lay eggs.
-	 */
-	public void layAnEgg() {
+    /**
+     * Oviparous creatures lay eggs.
+     */
+    public void layAnEgg() {
 		
 	}
 }

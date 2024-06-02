@@ -20,10 +20,10 @@ public class FeedEnclosureModalController {
 	private EnclosureVueController enclosureVueController;
 
 
-	/**
-	 * Feeds all creatures in the enclosure.
-	 */
-	@FXML
+    /**
+     * Feeds all creatures in the enclosure.
+     */
+    @FXML
 	public void feedAllCreatures() {
 		if (Constants.Enclosure.FEED_PRICE > this.enclosureVueController.getZoo().getMaster().getMoney()) {
 			Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -41,31 +41,31 @@ public class FeedEnclosureModalController {
 		stage.close();
 		
 	}
-	
-	/**
-	 * Cancels the feeding process for the enclosure.
-	 */
-	@FXML
+
+    /**
+     * Cancels the feeding process for the enclosure.
+     */
+    @FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
-	
-	/**
-	 * Sets the enclosure for this controller.
-	 *
-	 * @param enclosure The enclosure to be set.
-	 */
-	public void setEnclosure(Enclosure enclosure) {
+
+    /**
+     * Sets the enclosure for this controller.
+     *
+     * @param enclosure The enclosure to be set.
+     */
+    public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
-	
-	/**
-	 * Sets the enclosure view controller for this controller.
-	 *
-	 * @param enclosureVueController The enclosure view controller to be set.
-	 */
-	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
+
+    /**
+     * Sets the enclosure view controller for this controller.
+     *
+     * @param enclosureVueController The enclosure view controller to be set.
+     */
+    public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}
 }

@@ -42,7 +42,7 @@ public class ZooVueController {
     private int dayCounter;
     private Zoo zoo;
     private String console = "";
-    
+
     /**
      * Initializes the controller.
      */
@@ -59,7 +59,7 @@ public class ZooVueController {
         enclosureSellOrBuyButton9.setCursor(Cursor.HAND);
         nextDayButton.setCursor(Cursor.HAND);
     }
-    
+
     /**
      * Updates the displayed data.
      */
@@ -70,7 +70,7 @@ public class ZooVueController {
         masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
         consoleText.setText(this.console);
     }
-    
+
     /**
      * Handles the click event on the "Next Day" button.
      */
@@ -136,7 +136,7 @@ public class ZooVueController {
             openSellEnclosureModal(enclosure);
         }
     }
-    
+
     /**
      * Initializes the master and zoo.
      *
@@ -204,7 +204,7 @@ public class ZooVueController {
             e.printStackTrace();
         }
     }
-    
+
     /**
      * Updates the enclosure.
      *
@@ -253,7 +253,7 @@ public class ZooVueController {
             button.setText("-");
         }
     }
-    
+
     /**
      * Adds text to the console.
      *
@@ -262,7 +262,7 @@ public class ZooVueController {
     public void addInConsole(String text) {
     	this.console += "\n"+ text;
     }
-    
+
     /**
      * Gets the zoo object.
      *

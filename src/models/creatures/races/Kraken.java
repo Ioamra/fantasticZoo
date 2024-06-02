@@ -8,14 +8,15 @@ import models.creatures.reproductionType.Oviparous;
  */
 public class Kraken extends Oviparous {
 
-	/**
-	 * Constructor to create a new kraken with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Kraken(
+    /**
+     * Constructor to create a new kraken with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Kraken(
 		String name, 
 		Gender gender,  
 		int weight,

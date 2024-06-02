@@ -45,21 +45,21 @@ public class BuyCreatureModalController {
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
 
-	/**
-	 * Initializes the choice boxes and sets default values.
-	 */
-	public void initialize() {
+    /**
+     * Initializes the choice boxes and sets default values.
+     */
+    public void initialize() {
 		creatureGenderChoiceBox.getItems().addAll("Male", "Femelle" );
 		creatureGenderChoiceBox.setValue("Male");
 		creatureTypeChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             onCreatureTypeChange(newValue);
         });
 	}
-	
-	/**
-	 * Initializes data based on the type of enclosure.
-	 */
-	public void initData() {
+
+    /**
+     * Initializes data based on the type of enclosure.
+     */
+    public void initData() {
 		if (this.enclosure instanceof Aquarium) {
 			creatureTypeChoiceBox.getItems().addAll("Dragon", "Kraken", "Megalodon", "Sirène", "Nymph" );
 			heightLabel.setText("Hauteur :");
@@ -399,21 +399,21 @@ public class BuyCreatureModalController {
 	    stage.close();
 	}
 
-	/**
-	 * Sets the enclosure for this controller.
-	 *
-	 * @param enclosure The enclosure to be set.
-	 */
-	public void setEnclosure(Enclosure enclosure) {
+    /**
+     * Sets the enclosure for this controller.
+     *
+     * @param enclosure The enclosure to be set.
+     */
+    public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
 
-	/**
-	 * Sets the enclosure view controller for this controller.
-	 *
-	 * @param enclosureVueController The enclosure view controller to be set.
-	 */
-	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
+    /**
+     * Sets the enclosure view controller for this controller.
+     *
+     * @param enclosureVueController The enclosure view controller to be set.
+     */
+    public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}
 }

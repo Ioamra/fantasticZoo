@@ -2,19 +2,21 @@ package models.creatures.races;
 
 import config.Constants;
 import models.creatures.reproductionType.Viviparous;
+
 /**
  * Represents a unicorn, which is a viviparous creature.
  */
 public class Unicorn extends Viviparous {
 
-	/**
-	 * Constructor to create a new unicorn with specified parameters.
-	 *
-	 * @param name
-	 * @param gender
-	 * @param weight
-	 */
-	public Unicorn(
+    /**
+     * Constructor to create a new unicorn with specified parameters.
+     *
+     * @param name   the name
+     * @param gender the gender
+     * @param weight the weight
+     * @param age    the age
+     */
+    public Unicorn(
 		String name, 
 		Gender gender, 
 		int weight,

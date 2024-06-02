@@ -19,10 +19,10 @@ public class CleanEnclosureModalController {
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
 
-	/**
-	 * Confirms the cleaning process for the enclosure.
-	 */
-	@FXML
+    /**
+     * Confirms the cleaning process for the enclosure.
+     */
+    @FXML
 	public void confirmCleaning() {
 		if (Constants.Enclosure.CLEAN_PRICE > this.enclosureVueController.getZoo().getMaster().getMoney()) {
 			Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -40,20 +40,30 @@ public class CleanEnclosureModalController {
 		stage.close();
 	}
 
-	/**
-	 * Cancels the cleaning process for the enclosure.
-	 */
-	@FXML
+    /**
+     * Cancels the cleaning process for the enclosure.
+     */
+    @FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
 
-	public void setEnclosure(Enclosure enclosure) {
+    /**
+     * Sets enclosure.
+     *
+     * @param enclosure the enclosure
+     */
+    public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
-	
-	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
+
+    /**
+     * Sets enclosure vue controller.
+     *
+     * @param enclosureVueController the enclosure vue controller
+     */
+    public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}
 }

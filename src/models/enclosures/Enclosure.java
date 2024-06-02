@@ -13,16 +13,16 @@ public abstract class Enclosure {
 	private int surface;
 	private Creature[] creatureList;
 	private int cleanliness;
-	
-	/**
-	 * Constructor to create a new enclosure with specified parameters.
-	 *
-	 * @param position	
-	 * @param name
-	 * @param surface
-	 * @param cleanliness
-	 */
-	public Enclosure(
+
+    /**
+     * Constructor to create a new enclosure with specified parameters.
+     *
+     * @param position    the position
+     * @param name        the name
+     * @param surface     the surface
+     * @param cleanliness the cleanliness
+     */
+    public Enclosure(
 			int position,
 			String name,
 			int surface,
@@ -35,35 +35,37 @@ public abstract class Enclosure {
 		setCleanliness(cleanliness);
 	}
 
-	/**
-	 * Feeds all creatures in the creature list.
-	 */
-	public void feedAll() {
+    /**
+     * Feeds all creatures in the creature list.
+     */
+    public void feedAll() {
 		for (Creature creature: creatureList) {
 			creature.eat();
 		}
 	}
 
-	/**
-	 * set the Cleanliness of the enclosure to 100
-	 */
-	public void clean() {
+    /**
+     * set the Cleanliness of the enclosure to 100
+     */
+    public void clean() {
 		this.setCleanliness(Constants.Enclosure.MAX_CLEANLINESS);
 	}
 
-	/**
-	 * Heal all creatures in the creature list.
-	 */
-	public void healAll() {
+    /**
+     * Heal all creatures in the creature list.
+     */
+    public void healAll() {
 		for (Creature creature: creatureList) {
 			creature.heal();
 		}
 	}
 
-	/**
-	 * Add a creatures in the creature list.
-	 */
-	public void addCreature(Creature creature) {
+    /**
+     * Add a creatures in the creature list.
+     *
+     * @param creature the creature
+     */
+    public void addCreature(Creature creature) {
 		Creature[] creatureListTmp = new Creature[creatureList.length + 1];
 		 for (int i = 0; i < creatureList.length; i++) {
 			 creatureListTmp[i] = creatureList[i];
@@ -71,11 +73,13 @@ public abstract class Enclosure {
 		 creatureListTmp[creatureList.length] = creature;
 		 setCreatureList(creatureListTmp);
 	}
-	
-	/**
-	 * Remove a creatures in the creature list.
-	 */
-	public void removeCreature(Creature creature) {
+
+    /**
+     * Remove a creatures in the creature list.
+     *
+     * @param creature the creature
+     */
+    public void removeCreature(Creature creature) {
 	    for (int i = 0; i < creatureList.length; i++) {
 	        if (creatureList[i].equals(creature)) {
 	        	Creature[] newCreatureList = new Creature[creatureList.length - 1];
@@ -89,43 +93,93 @@ public abstract class Enclosure {
 
 	// Getters and Setters
 
-	public Creature[] getCreatureList() {
+    /**
+     * Get creature list creature [ ].
+     *
+     * @return the creature [ ]
+     */
+    public Creature[] getCreatureList() {
 		return creatureList;
 	}
 
-	public void setCreatureList(Creature[] creatureList) {
+    /**
+     * Sets creature list.
+     *
+     * @param creatureList the creature list
+     */
+    public void setCreatureList(Creature[] creatureList) {
 		this.creatureList = creatureList;
 	}
 
-	public int getCleanliness() {
+    /**
+     * Gets cleanliness.
+     *
+     * @return the cleanliness
+     */
+    public int getCleanliness() {
 		return cleanliness;
 	}
 
-	public void setCleanliness(int cleanliness) {
+    /**
+     * Sets cleanliness.
+     *
+     * @param cleanliness the cleanliness
+     */
+    public void setCleanliness(int cleanliness) {
 		this.cleanliness = cleanliness;
 	}
 
-	public String getName() {
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+    public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
+    public void setName(String name) {
 		this.name = name;
 	}
 
-	public int getPosition() {
+    /**
+     * Gets position.
+     *
+     * @return the position
+     */
+    public int getPosition() {
 		return position;
 	}
 
-	public void setPosition(int position) {
+    /**
+     * Sets position.
+     *
+     * @param position the position
+     */
+    public void setPosition(int position) {
 		this.position = position;
 	}
-	
-	public int getSurface() {
+
+    /**
+     * Gets surface.
+     *
+     * @return the surface
+     */
+    public int getSurface() {
 		return surface;
 	}
 
-	public void setSurface(int surface) {
+    /**
+     * Sets surface.
+     *
+     * @param surface the surface
+     */
+    public void setSurface(int surface) {
 		this.surface = surface;
 	}
 }

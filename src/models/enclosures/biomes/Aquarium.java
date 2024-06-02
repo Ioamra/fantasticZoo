@@ -10,17 +10,17 @@ public class Aquarium extends Enclosure {
 	private int depth;
 	private int salinity;
 
-	/**
-	 * Constructor to create a new aquarium enclosure with specified parameters.
-	 * 
-	 * @param position
-	 * @param name
-	 * @param surface
-	 * @param cleanliness
-	 * @param depth
-	 * @param salinity
-	 */
-	public Aquarium(
+    /**
+     * Constructor to create a new aquarium enclosure with specified parameters.
+     *
+     * @param position    the position
+     * @param name        the name
+     * @param surface     the surface
+     * @param cleanliness the cleanliness
+     * @param depth       the depth
+     * @param salinity    the salinity
+     */
+    public Aquarium(
 			int position,
 			String name,
 			int surface,
@@ -39,20 +39,40 @@ public class Aquarium extends Enclosure {
 	}
 
 	// Getters and Setters
-	
-	public int getDepth() {
+
+    /**
+     * Gets depth.
+     *
+     * @return the depth
+     */
+    public int getDepth() {
 		return depth;
 	}
 
-	public void setDepth(int depth) {
+    /**
+     * Sets depth.
+     *
+     * @param depth the depth
+     */
+    public void setDepth(int depth) {
 		this.depth = depth;
 	}
 
-	public int getSalinity() {
+    /**
+     * Gets salinity.
+     *
+     * @return the salinity
+     */
+    public int getSalinity() {
 		return salinity;
 	}
 
-	public void setSalinity(int salinity) {
+    /**
+     * Sets salinity.
+     *
+     * @param salinity the salinity
+     */
+    public void setSalinity(int salinity) {
 		this.salinity = salinity;
 	}
 }

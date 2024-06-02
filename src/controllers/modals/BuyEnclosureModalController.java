@@ -29,35 +29,35 @@ public class BuyEnclosureModalController {
     private int location;
     private ZooVueController zooVueController;
 
-	/**
-	 * Initializes the choice box with enclosure types.
-	 */
+    /**
+     * Initializes the choice box with enclosure types.
+     */
     @FXML
     public void initialize() {
     	enclosureTypeChoiceBox.getItems().addAll("Aquarium", "Volière", "Terrestre");
     }
-    
-	/**
-	 * Sets the location for the enclosure.
-	 *
-	 * @param location The location to set.
-	 */
+
+    /**
+     * Sets the location for the enclosure.
+     *
+     * @param location The location to set.
+     */
     public void setLocation(int location) {
         this.location = location;
     }
 
-	/**
-	 * Sets the ZooVueController for this controller.
-	 *
-	 * @param zooVueController The ZooVueController to set.
-	 */
+    /**
+     * Sets the ZooVueController for this controller.
+     *
+     * @param zooVueController The ZooVueController to set.
+     */
     public void setZooVueController(ZooVueController zooVueController) {
         this.zooVueController = zooVueController;
     }
 
-	/**
-	 * Handles the process of buying an enclosure.
-	 */
+    /**
+     * Handles the process of buying an enclosure.
+     */
     @FXML
     public void buyEnclosure() {
         String selectedType = enclosureTypeChoiceBox.getValue();
@@ -132,10 +132,10 @@ public class BuyEnclosureModalController {
         }
     }
 
-	/**
-	 * Cancels the process of buying an enclosure.
-	 */
-	@FXML
+    /**
+     * Cancels the process of buying an enclosure.
+     */
+    @FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
