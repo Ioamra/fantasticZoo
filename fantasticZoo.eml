@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/fantasticZoo"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="openjfx.javafx.base" value="project"/>
+		<level name="javafx-swt" value="project"/>
+		<level name="javafx.controls" value="project"/>
+		<level name="javafx.fxml" value="project"/>
+		<level name="javafx.graphics" value="project"/>
+		<level name="javafx.media" value="project"/>
+		<level name="javafx.swing" value="project"/>
+		<level name="javafx.web" value="project"/>
+		<level name="openjfx.javafx.controls" value="project"/>
+	</levels>
+</component>

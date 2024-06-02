@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="javafx.web">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx.web.jar" />
+  </library>
+  <library name="openjfx.javafx.base">
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1.jar" />
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1-win.jar" />
+  </library>
+  <library name="openjfx.javafx.controls">
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-controls/22-ea+16/javafx-controls-22-ea+16.jar" />
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-controls/22-ea+16/javafx-controls-22-ea+16-win.jar" />
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-graphics/22-ea+16/javafx-graphics-22-ea+16.jar" />
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-graphics/22-ea+16/javafx-graphics-22-ea+16-win.jar" />
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-base/22-ea+16/javafx-base-22-ea+16.jar" />
+    <archive path="C:/Users/user/.m2/repository/org/openjfx/javafx-base/22-ea+16/javafx-base-22-ea+16-win.jar" />
+  </library>
+  <library name="javafx.controls">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx.controls.jar" />
+  </library>
+  <library name="javafx.fxml">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx.fxml.jar" />
+  </library>
+  <library name="javafx.graphics">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx.graphics.jar" />
+  </library>
+  <library name="javafx.media">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx.media.jar" />
+  </library>
+  <library name="javafx.swing">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx.swing.jar" />
+  </library>
+  <library name="javafx-swt">
+    <archive path="C:/Users/user/.jdks/javafx-sdk-22.0.1/lib/javafx-swt.jar" />
+  </library>
+</eclipse-userlibraries>
+
