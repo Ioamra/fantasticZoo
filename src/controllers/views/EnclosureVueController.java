@@ -1,7 +1,10 @@
 package controllers.views;
 
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import javafx.scene.image.Image;
 import controllers.modals.BuyCreatureModalController;
 import controllers.modals.CleanEnclosureModalController;
 import controllers.modals.FeedEnclosureModalController;
@@ -19,10 +22,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.creatures.Creature;
+import models.creatures.races.*;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
 import models.enclosures.biomes.Aviary;
@@ -44,6 +49,38 @@ public class EnclosureVueController {
     @FXML
     private Text masterMoney;
     @FXML
+    private ImageView creature1;
+    @FXML
+    private ImageView creature2;
+    @FXML
+    private ImageView creature3;
+    @FXML
+    private ImageView creature4;
+    @FXML
+    private ImageView creature5;
+    @FXML
+    private ImageView creature6;
+    @FXML
+    private ImageView creature7;
+    @FXML
+    private ImageView creature8;
+    @FXML
+    private ImageView creature9;
+    @FXML
+    private ImageView creature10;
+    @FXML
+    private ImageView creature11;
+    @FXML
+    private ImageView creature12;
+    @FXML
+    private ImageView creature13;
+    @FXML
+    private ImageView creature14;
+    @FXML
+    private ImageView creature15;
+    @FXML
+    private ImageView creature16;
+    @FXML
     private ImageView openBuyCreatureImage;
     @FXML
     private ImageView openSellCreatureImage;
@@ -64,6 +101,7 @@ public class EnclosureVueController {
     private Zoo zoo;
     private int dayCounter;
     private String console = "";
+    private List<ImageView> creatureImages;
     
     @FXML
     public void initialize() {
@@ -75,13 +113,54 @@ public class EnclosureVueController {
     	openFeedEnclosureImage.setCursor(Cursor.HAND);
     	openCleanEnclosureImage.setCursor(Cursor.HAND);
     	openUpgradeEnclosureImage.setCursor(Cursor.HAND);
+
+
+        creatureImages = Arrays.asList(
+                creature1, creature2, creature3, creature4,
+                creature5, creature6, creature7, creature8,
+                creature9, creature10, creature11, creature12,
+                creature13, creature14, creature15, creature16
+        );
     }
-    
+
     public void updateData() {
-    	int usedSurface = 0;
-		for (Creature creature: this.enclosure.getCreatureList()) {
-			usedSurface += creature.getSize();
-		}
+        int usedSurface = 0;
+        List<Creature> creatures = new ArrayList<>(List.of(this.enclosure.getCreatureList()));
+
+        for (int i = 0; i < creatureImages.size(); i++) {
+            ImageView imageView = creatureImages.get(i);
+            if (i < creatures.size()) {
+                Creature creature = creatures.get(i);
+                usedSurface += creature.getSize();
+                System.out.println(imageView);
+                String imagePath = null;
+                if (creature instanceof Dragon) {
+                    imagePath = "/assets/img/dragon.png";
+                } else if (creature instanceof Kraken) {
+                    imagePath = "/assets/img/kraken.png";
+                } else if (creature instanceof Mermaid) {
+                    imagePath = "/assets/img/mermaid.png";
+                } else if (creature instanceof Lycanthropes) {
+                    imagePath = "/assets/img/lycanthropes.png";
+                } else if (creature instanceof Megalodon) {
+                    imagePath = "/assets/img/megalodon.png";
+                } else if (creature instanceof Nymph) {
+                    imagePath = "/assets/img/nymph.png";
+                } else if (creature instanceof Unicorn) {
+                    imagePath = "/assets/img/unicorn.png";
+                } else if (creature instanceof Phoenix) {
+                    imagePath = "/assets/img/phoenix.png";
+                }
+
+                if (imagePath != null) {
+                    imageView.setImage(new Image(getClass().getResourceAsStream(imagePath)));
+                } else {
+                    imageView.setImage(null);
+                }
+            } else {
+                imageView.setImage(null);
+            }
+        }
 		surfaceText.setText("Surface utilisé: " + usedSurface + "/" + this.enclosure.getSurface());
     	
     	 if (this.enclosure instanceof UndefinedEnclosure) {
@@ -97,7 +176,7 @@ public class EnclosureVueController {
         masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
         consoleText.setText(this.console);
     }
-    
+
     @FXML
     private void returnToZooVue(ActionEvent event) {
     	try {
@@ -120,6 +199,11 @@ public class EnclosureVueController {
 
     public void setEnclosure(Enclosure enclosure) {
         this.enclosure = enclosure;
+    }
+
+    @FXML
+    private void HandleViewCreatureInfo(MouseEvent event) {
+
     }
     
     @FXML
