@@ -67,7 +67,7 @@ public class Constants {
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
 			public static final int SIZE = 5;
-			public static final int HEIGHT = 5;
+			public static final int HEIGHT = 3;
 		}
 
 		public static class Lycanthropes {
@@ -77,7 +77,7 @@ public class Constants {
 			public static final int MAX_HP = 10;
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
-			public static final int SIZE = 5;
+			public static final int SIZE = 2;
 		}
 
 		public static class Megalodon {
@@ -88,7 +88,7 @@ public class Constants {
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
 			public static final int SIZE = 5;
-			public static final int HEIGHT = 5;
+			public static final int HEIGHT = 4;
 		}
 
 		public static class Mermaid {
@@ -98,8 +98,8 @@ public class Constants {
 			public static final int MAX_HP = 10;
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
-			public static final int SIZE = 5;
-			public static final int HEIGHT = 5;
+			public static final int SIZE = 2;
+			public static final int HEIGHT = 2;
 		}
 
 		public static class Nymph {
@@ -109,8 +109,8 @@ public class Constants {
 			public static final int MAX_HP = 10;
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
-			public static final int SIZE = 5;
-			public static final int HEIGHT = 5;
+			public static final int SIZE = 4;
+			public static final int HEIGHT = 2;
 		}
 
 		public static class Phoenix {
@@ -120,8 +120,8 @@ public class Constants {
 			public static final int MAX_HP = 10;
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
-			public static final int SIZE = 5;
-			public static final int HEIGHT = 5;
+			public static final int SIZE = 4;
+			public static final int HEIGHT = 3;
 		}
 
 		public static class Unicorn {
@@ -131,7 +131,7 @@ public class Constants {
 			public static final int MAX_HP = 10;
 			public static final int MAX_AGE = 12;
 			public static final int INITIAL_WEIGHT = 10;
-			public static final int SIZE = 5;
+			public static final int SIZE = 2;
 		}
 	}
 }
