@@ -3,6 +3,9 @@ package models.creatures.races;
 import config.Constants;
 import models.creatures.reproductionType.Oviparous;
 
+/**
+ * Represents a kraken, which is an oviparous creature.
+ */
 public class Kraken extends Oviparous {
 
 	/**
@@ -26,17 +29,26 @@ public class Kraken extends Oviparous {
 			age
 		);
 	}
-
+	
+	/**
+	 * Makes a sound, which krakens do not implement.
+	 */
 	public void makeSound() {
 		
 	}
-
+	
+	/**
+	 * Checks the age of the kraken and kills it if it exceeds the maximum age.
+	 */
 	public void checkAge() {
 		if (this.age > Constants.Creature.Kraken.MAX_AGE) {
 			this.die();
 		}
 	}
 	
+	/**
+	 * Heals the kraken to its maximum health points.
+	 */
 	public void heal() {
 		this.setHp(Constants.Creature.Kraken.MAX_HP);
 	}

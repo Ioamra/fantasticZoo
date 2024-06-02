@@ -8,11 +8,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
-
+/**
+ * Controller class for the tutorial view.
+ */
 public class TutoVueController {
 	@FXML
 	private Button button;
-	
+
+	/**
+	 * Event handler method for navigating to the master initialization view.
+	 */
 	@FXML
 	void GoToZooVue(ActionEvent event) {
 	    try {

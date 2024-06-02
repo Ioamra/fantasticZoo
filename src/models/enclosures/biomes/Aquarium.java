@@ -2,6 +2,9 @@ package models.enclosures.biomes;
 
 import models.enclosures.Enclosure;
 
+/**
+ * Represents an aquarium enclosure in the zoo, specialized for aquatic creatures.
+ */
 public class Aquarium extends Enclosure {
 
 	private int depth;

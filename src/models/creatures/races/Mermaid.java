@@ -3,6 +3,9 @@ package models.creatures.races;
 import config.Constants;
 import models.creatures.reproductionType.Viviparous;
 
+/**
+ * Represents a mermaid, which is a viviparous creature.
+ */
 public class Mermaid extends Viviparous {
 
 	/**
@@ -27,16 +30,25 @@ public class Mermaid extends Viviparous {
 		);
 	}
 
+	/**
+	 * Makes a sound, which mermaids do not implement.
+	 */
 	public void makeSound() {
 		
 	}
-
+	
+	/**
+	 * Checks the age of the mermaid and kills it if it exceeds the maximum age.
+	 */
 	public void checkAge() {
 		if (this.age > Constants.Creature.Mermaid.MAX_AGE) {
 			this.die();
 		}
 	}
 	
+	/**
+	 * Heals the mermaid to its maximum health points.
+	 */
 	public void heal() {
 		this.setHp(Constants.Creature.Mermaid.MAX_HP);
 	}

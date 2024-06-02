@@ -1,6 +1,8 @@
 package models.creatures.reproductionType;
 import models.creatures.Creature;
-
+/**
+ * Represents an oviparous creature, which reproduces by laying eggs.
+ */
 public abstract class Oviparous extends Creature {
 	
 	/**
@@ -28,10 +30,18 @@ public abstract class Oviparous extends Creature {
 		);
 	}
 	
+	/**
+	 * Oviparous creatures mate by laying eggs.
+	 *
+	 * @param creature The creature to mate with.
+	 */
 	public void mate(Creature creature) {
 		
 	}
-	
+
+	/**
+	 * Oviparous creatures lay eggs.
+	 */
 	public void layAnEgg() {
 		
 	}

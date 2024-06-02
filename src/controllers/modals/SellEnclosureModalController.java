@@ -16,6 +16,9 @@ import models.enclosures.biomes.Aviary;
 import models.enclosures.biomes.Terrestrial;
 import models.enclosures.biomes.UndefinedEnclosure;
 
+/**
+ * Controller class for the modal to sell an enclosure.
+ */
 public class SellEnclosureModalController {
 	@FXML
 	private AnchorPane anchorPane;
@@ -31,6 +34,9 @@ public class SellEnclosureModalController {
     private Enclosure enclosure;
 	private ZooVueController zooVueController;
 	
+	/**
+	 * Initializes the data for the sell enclosure modal.
+	 */
     public void initData() {
 		if (this.enclosure instanceof Aquarium) {
 			depthOrHeightLabel.setText("Profondeur :");
@@ -42,7 +48,12 @@ public class SellEnclosureModalController {
 		nameValue.setText(this.enclosure.getName());
 		surfaceValue.setText(String.valueOf(this.enclosure.getSurface()));
     }
-
+    
+	/**
+	 * Handles the process of selling an enclosure.
+	 * Checks if there are creatures in the enclosure and prompts the user for confirmation before selling.
+	 * If confirmed, sells the enclosure and updates the zoo data.
+	 */
 	@FXML
 	private void handleSellEnclosure() {
 		if (this.enclosure.getCreatureList().length > 0) {
@@ -59,6 +70,9 @@ public class SellEnclosureModalController {
 		}
 	}
 	
+	/**
+	 * Performs the actual selling of the enclosure and updates the zoo data accordingly.
+	 */
 	private void sellEnclosure() {
 		if (this.enclosure instanceof Aquarium) {
 			this.zooVueController.addInConsole("L'aquarium " + this.enclosure.getName() + " à été vendu pour " + Constants.Enclosure.Aquarium.SELL_PRICE + " $.");
@@ -74,17 +88,30 @@ public class SellEnclosureModalController {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
-	
+
+	/**
+	 * Cancels the process of selling an enclosure.
+	 */
 	@FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
 
+	/**
+	 * Sets the enclosure for this controller.
+	 *
+	 * @param enclosure The enclosure to be set.
+	 */
     public void setEnclosure(Enclosure enclosure) {
         this.enclosure = enclosure;
     }
     
+	/**
+	 * Sets the zoo view controller for this controller.
+	 *
+	 * @param zooVueController The zoo view controller to be set.
+	 */
     public void setZooVueController(ZooVueController zooVueController) {
         this.zooVueController = zooVueController;
     }

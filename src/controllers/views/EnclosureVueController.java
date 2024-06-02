@@ -4,15 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+
+import controllers.modals.*;
 import javafx.scene.image.Image;
-import controllers.modals.BuyCreatureModalController;
-import controllers.modals.CleanEnclosureModalController;
-import controllers.modals.FeedEnclosureModalController;
-import controllers.modals.HealEnclosureModalController;
-import controllers.modals.MoveCreatureModalController;
-import controllers.modals.SellCreatureModalController;
-import controllers.modals.SellEnclosureModalController;
-import controllers.modals.UpgradeEnclosureModalController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,6 +29,9 @@ import models.enclosures.biomes.Terrestrial;
 import models.enclosures.biomes.UndefinedEnclosure;
 import models.zoo.Zoo;
 
+/**
+ * Controller class for displaying and managing enclosure details in the zoo.
+ */
 public class EnclosureVueController {
 	@FXML
 	private Label enclosureLabel;
@@ -50,7 +47,10 @@ public class EnclosureVueController {
     private int dayCounter;
     private String console = "";
     private List<ImageView> creatureImages;
-    
+
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() {
     	btnReturnToZoo.setCursor(Cursor.HAND);
@@ -70,7 +70,10 @@ public class EnclosureVueController {
                 creature13, creature14, creature15, creature16
         );
     }
-
+    
+    /**
+     * Updates the displayed data for the enclosure.
+     */
     public void updateData() {
         int usedSurface = 0;
         List<Creature> creatures = new ArrayList<>(List.of(this.enclosure.getCreatureList()));
@@ -125,7 +128,10 @@ public class EnclosureVueController {
         masterMoney.setText(String.valueOf(this.zoo.getMaster().getMoney()) + " $");
         consoleText.setText(this.console);
     }
-
+    
+    /**
+     * Handles the event to return to the main zoo view.
+     */
     @FXML
     private void returnToZooVue(ActionEvent event) {
     	try {
@@ -145,12 +151,41 @@ public class EnclosureVueController {
 	        e.printStackTrace();
 	    }
     }
-
+    
+    /**
+     * Handles the event to view details of a creature.
+     */
     @FXML
     private void HandleViewCreatureInfo(MouseEvent event) {
-
+        ImageView clickedCreature = (ImageView) event.getSource();
+        int idCreature = Integer.parseInt(clickedCreature.getId().replace("creature","")) - 1;
+        Creature creature = this.enclosure.getCreatureList()[idCreature];
+        this.openInfoCreatureModal(creature);
     }
     
+    /**
+     * Opens the modal dialog to see the creature's info.
+     */
+    private void openInfoCreatureModal(Creature creature) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/InfoCreatureModal.fxml"));
+            Parent root = loader.load();
+
+            InfoCreatureModalController infoCreatureModalController = loader.getController();
+            infoCreatureModalController.initData(creature);
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Opens the modal dialog to buy a creature.
+     */
     @FXML
     private void openBuyCreatureModal() {
     	try {
@@ -170,7 +205,10 @@ public class EnclosureVueController {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Opens the modal dialog to sell a creature.
+     */
     @FXML
     private void openSellCreatureModal() {
     	try {
@@ -189,8 +227,11 @@ public class EnclosureVueController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }   
+    }
     
+    /**
+     * Opens the modal dialog to move a creature to another enclosure.
+     */
     @FXML
     private void openMoveCreatureModal() {
     	try {
@@ -211,6 +252,9 @@ public class EnclosureVueController {
         }
     }
     
+    /**
+     * Opens the modal dialog to clean the enclosure.
+     */
     @FXML
     private void openCleanEnclosureModal() {
     	try {
@@ -231,6 +275,9 @@ public class EnclosureVueController {
         }
     }
     
+    /**
+     * Opens the modal dialog to heal creatures in the enclosure.
+     */
     @FXML
     private void openHealEnclosureModal() {
     	try {
@@ -251,6 +298,9 @@ public class EnclosureVueController {
         }
     }
     
+    /**
+     * Opens the modal dialog to upgrade the enclosure.
+     */
     @FXML
     private void openUpgradeEnclosureModal() {
     	try {
@@ -271,6 +321,9 @@ public class EnclosureVueController {
         }
     }
     
+    /**
+     * Opens the modal dialog to feed creatures in the enclosure.
+     */
     @FXML
     private void openFeedEnclosureModal() {
     	try {
@@ -291,22 +344,47 @@ public class EnclosureVueController {
         }
     }
     
+    /**
+     * Adds text to the console display.
+     *
+     * @param text The text to be added to the console.
+     */
     public void addInConsole(String text) {
     	this.console += "\n"+ text;
     }
     
+    /**
+     * Sets the day counter for the zoo.
+     *
+     * @param dayCounter The day counter to be set.
+     */
     public void setDayCounter(int dayCounter) {
         this.dayCounter = dayCounter;
     }
-    
+
+    /**
+     * Gets the zoo object.
+     *
+     * @return The zoo object.
+     */
     public Zoo getZoo() {
     	return this.zoo;
     }
     
+    /**
+     * Sets the zoo object.
+     *
+     * @param zooObject The zoo object to be set.
+     */
     public void setZoo(Zoo zooObject) {
     	this.zoo = zooObject;
     }
-
+    
+    /**
+     * Sets the enclosure for this controller.
+     *
+     * @param enclosure The enclosure to be set.
+     */
     public void setEnclosure(Enclosure enclosure) {
         this.enclosure = enclosure;
     }

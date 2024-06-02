@@ -3,6 +3,9 @@ package models.zoo;
 import models.enclosures.Enclosure;
 import models.master.Master;
 
+/**
+ * Represents a zoo with enclosures managed by a master.
+ */
 public class Zoo {
 	
 	private String name;

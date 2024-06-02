@@ -2,6 +2,9 @@ package models.enclosures.biomes;
 
 import models.enclosures.Enclosure;
 
+/**
+ * Represents a terrestrial enclosure in the zoo, specialized for land-dwelling creatures.
+ */
 public class Terrestrial extends Enclosure {
 
 	/**

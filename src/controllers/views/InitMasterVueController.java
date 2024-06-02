@@ -21,6 +21,9 @@ import java.util.ResourceBundle;
 
 import config.Constants;
 
+/**
+ * Controller class for initializing the master (player) object.
+ */
 public class InitMasterVueController implements Initializable {
 
     @FXML
@@ -28,12 +31,18 @@ public class InitMasterVueController implements Initializable {
     @FXML
     private ChoiceBox<String> genderChoiceBox;
 
+    /**
+     * Initializes the gender choice box with default values.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         genderChoiceBox.getItems().addAll("Homme", "Femme");
         genderChoiceBox.setValue("Homme");
     }
 
+    /**
+     * Initializes the master object based on user input and navigates to the zoo view.
+     */
     @FXML
     private void initializeMaster() {
         try {

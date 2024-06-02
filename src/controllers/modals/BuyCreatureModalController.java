@@ -26,6 +26,10 @@ import models.enclosures.biomes.Aquarium;
 import models.enclosures.biomes.Aviary;
 import models.enclosures.biomes.Terrestrial;
 
+/**
+ * Controller class for the buy creature modal window.
+ * Allows users to buy creatures to add to enclosures in the zoo.
+ */
 public class BuyCreatureModalController {
 	@FXML
 	private AnchorPane anchorPane;
@@ -40,8 +44,10 @@ public class BuyCreatureModalController {
 
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
-	
-	
+
+	/**
+	 * Initializes the choice boxes and sets default values.
+	 */
 	public void initialize() {
 		creatureGenderChoiceBox.getItems().addAll("Male", "Femelle" );
 		creatureGenderChoiceBox.setValue("Male");
@@ -50,6 +56,9 @@ public class BuyCreatureModalController {
         });
 	}
 	
+	/**
+	 * Initializes data based on the type of enclosure.
+	 */
 	public void initData() {
 		if (this.enclosure instanceof Aquarium) {
 			creatureTypeChoiceBox.getItems().addAll("Dragon", "Kraken", "Megalodon", "Sirène", "Nymph" );
@@ -61,7 +70,12 @@ public class BuyCreatureModalController {
 			creatureTypeChoiceBox.getItems().addAll("Dragon", "Loup-garou", "Nymph", "Licorne" );
 		}
 	}
-	
+
+	/**
+	 * Handles changes in the selected creature type.
+	 *
+	 * @param newCreatureType The newly selected creature type.
+	 */
 	private void onCreatureTypeChange(String newCreatureType) {
 		switch (newCreatureType) {
 			case "Dragon":
@@ -116,8 +130,10 @@ public class BuyCreatureModalController {
 				break;
 		}
 	}
-	
-	
+
+	/**
+	 * Handles the process of buying a creature.
+	 */
 	@FXML
 	private void handleBuyCreature() {
 		String name = nameField.getText();
@@ -373,17 +389,30 @@ public class BuyCreatureModalController {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
-	
+
+	/**
+	 * Cancels the process of buying a creature.
+	 */
 	@FXML
 	private void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
-	
+
+	/**
+	 * Sets the enclosure for this controller.
+	 *
+	 * @param enclosure The enclosure to be set.
+	 */
 	public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
-	
+
+	/**
+	 * Sets the enclosure view controller for this controller.
+	 *
+	 * @param enclosureVueController The enclosure view controller to be set.
+	 */
 	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}

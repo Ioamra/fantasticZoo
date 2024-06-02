@@ -25,6 +25,9 @@ import models.enclosures.biomes.UndefinedEnclosure;
 import models.master.Master;
 import models.zoo.Zoo;
 
+/**
+ * Controller class for the zoo view.
+ */
 public class ZooVueController {
 	@FXML
 	private Label dayLabel;
@@ -39,7 +42,10 @@ public class ZooVueController {
     private int dayCounter;
     private Zoo zoo;
     private String console = "";
-
+    
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() {
         enclosureSellOrBuyButton1.setCursor(Cursor.HAND);
@@ -54,6 +60,9 @@ public class ZooVueController {
         nextDayButton.setCursor(Cursor.HAND);
     }
     
+    /**
+     * Updates the displayed data.
+     */
     public void updateData() {
         dayLabel.setText("Jour " + dayCounter);
         zooNameText.setText(this.zoo.getName());
@@ -62,12 +71,20 @@ public class ZooVueController {
         consoleText.setText(this.console);
     }
     
+    /**
+     * Handles the click event on the "Next Day" button.
+     */
     @FXML
     void handleNextDayButton() {
         dayCounter++;
         dayLabel.setText("Jour " + dayCounter);
     }
     
+    /**
+     * Handles the click event on an enclosure.
+     *
+     * @param event The MouseEvent object representing the click event.
+     */
     @FXML
     private void handleEnclosureClick(MouseEvent event) {
     	Pane clickedEnclosure= (Pane) event.getSource();
@@ -78,6 +95,11 @@ public class ZooVueController {
     	}
     }
     
+    /**
+     * Opens the enclosure view.
+     *
+     * @param enclosure The enclosure object to display.
+     */
     private void openEnclosureView(Enclosure enclosure) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/views/EnclosureVue.fxml"));
@@ -97,6 +119,11 @@ public class ZooVueController {
         }
     }
     
+    /**
+     * Handles the click event on an enclosure's sell or buy button.
+     *
+     * @param event The ActionEvent object representing the click event.
+     */
     @FXML
     private void handleEnclosureSellOrBuy(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
@@ -110,6 +137,12 @@ public class ZooVueController {
         }
     }
     
+    /**
+     * Initializes the master and zoo.
+     *
+     * @param zooName The name of the zoo.
+     * @param master  The master object.
+     */
     public void initMasterAndZoo(String zooName, Master master) {
         Enclosure[] enclosures = new Enclosure[nbEnclosure];
         for (int i = 0; i < nbEnclosure; i++) {
@@ -121,6 +154,11 @@ public class ZooVueController {
         this.updateData();
     }
     
+    /**
+     * Opens the buy enclosure modal.
+     *
+     * @param location The location of the enclosure.
+     */
     private void openBuyEnclosureModal(int location) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/BuyEnclosureModal.fxml"));
@@ -141,6 +179,11 @@ public class ZooVueController {
         }
     }
     
+    /**
+     * Opens the sell enclosure modal.
+     *
+     * @param enclosure The enclosure object to sell.
+     */
     private void openSellEnclosureModal(Enclosure enclosure) {
     	try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/modals/SellEnclosureModal.fxml"));
@@ -162,11 +205,19 @@ public class ZooVueController {
         }
     }
     
+    /**
+     * Updates the enclosure.
+     *
+     * @param enclosure The updated enclosure object.
+     */
     public void updateEnclosure(Enclosure enclosure) {
     	zoo.getEnclosureList()[enclosure.getPosition()] = enclosure;
     	this.updateData();
     }
 
+    /**
+     * Updates the enclosure status.
+     */
     public void updateEnclosureStatus() {
         updateEnclosureText(enclosure1, 0);
         updateEnclosureText(enclosure2, 1);
@@ -179,6 +230,12 @@ public class ZooVueController {
         updateEnclosureText(enclosure9, 8);
     }
 
+    /**
+     * Updates the text and button of the enclosure based on its type.
+     *
+     * @param enclosurePane The pane representing the enclosure.
+     * @param location      The index of the enclosure.
+     */
     private void updateEnclosureText(Pane enclosurePane, int location) {
         Text text = (Text) enclosurePane.getChildren().get(0);
         Button button = (Button) enclosurePane.getChildren().get(1);
@@ -197,18 +254,38 @@ public class ZooVueController {
         }
     }
     
+    /**
+     * Adds text to the console.
+     *
+     * @param text The text to add to the console.
+     */
     public void addInConsole(String text) {
     	this.console += "\n"+ text;
     }
     
+    /**
+     * Gets the zoo object.
+     *
+     * @return The zoo object.
+     */
     public Zoo getZoo() {
         return zoo;
     }
 
+    /**
+     * Sets the zoo object.
+     *
+     * @param zoo The zoo object to set.
+     */
     public void setZoo(Zoo zoo) {
         this.zoo = zoo;
     }
-    
+
+    /**
+     * Sets the day counter.
+     *
+     * @param dayCounter The day counter to set.
+     */
     public void setDayCounter(int dayCounter) {
         this.dayCounter = dayCounter;
     }

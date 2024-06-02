@@ -8,15 +8,20 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.enclosures.Enclosure;
 
+/**
+ * Controller class for the clean enclosure modal window.
+ * Allows users to confirm or cancel the cleaning process for an enclosure.
+ */
 public class CleanEnclosureModalController {
 	@FXML
 	private AnchorPane anchorPane;
 	
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
-	
 
-	
+	/**
+	 * Confirms the cleaning process for the enclosure.
+	 */
 	@FXML
 	public void confirmCleaning() {
 		if (Constants.Enclosure.CLEAN_PRICE > this.enclosureVueController.getZoo().getMaster().getMoney()) {
@@ -34,7 +39,10 @@ public class CleanEnclosureModalController {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 		stage.close();
 	}
-	
+
+	/**
+	 * Cancels the cleaning process for the enclosure.
+	 */
 	@FXML
 	public void cancel() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();

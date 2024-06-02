@@ -2,6 +2,9 @@ package models.enclosures.biomes;
 
 import models.enclosures.Enclosure;
 
+/**
+ * Represents an aviary enclosure, which is a type of enclosure for birds.
+ */
 public class Aviary extends Enclosure {
 	
 	private int height;
@@ -31,6 +34,9 @@ public class Aviary extends Enclosure {
 		this.setHeight(height);
 	}
 	
+	/**
+	 * Cleans the roof of the aviary.
+	 */
 	public void cleanRoof() {
 		
 	}

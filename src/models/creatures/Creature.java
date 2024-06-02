@@ -2,6 +2,9 @@ package models.creatures;
 
 import config.Constants;
 
+/**
+ * Represents a creature in the zoo, with various attributes and behaviors.
+ */
 public abstract class Creature {
 	
 	public enum Gender { M, F };

@@ -9,7 +9,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.enclosures.Enclosure;
 
-
+/**
+ * Controller class for the modal to upgrade an enclosure.
+ */
 public class UpgradeEnclosureModalController {
 	@FXML
 	private AnchorPane anchorPane;
@@ -28,23 +30,35 @@ public class UpgradeEnclosureModalController {
 	
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
-	
+
+    /**
+     * Initializes the choice box with enclosure types.
+     */
     @FXML
     public void initialize() 
     {
         enclosureTypeChoiceBox.getItems().addAll("Terrestre", "Aquarium", "Aviary");
     }
 
+    /**
+     * Initializes the data for the upgrade enclosure modal.
+     */
 	public void initData() {
 		
 	}
 	
+    /**
+     * Closes the upgrade enclosure modal.
+     */
 	@FXML
 	private void close() {
 		Stage stage = (Stage) anchorPane.getScene().getWindow();
 	    stage.close();
 	}
-    
+
+    /**
+     * Handles the selection of enclosure type and adjusts the visibility of input fields accordingly.
+     */
     @FXML
     private void handleEnclosureTypeSelection() 
     {
@@ -77,17 +91,31 @@ public class UpgradeEnclosureModalController {
             }
         }
     }
-
+    
+    /**
+     * Handles the upgrade of enclosure surface.
+     */
     @FXML
     private void upgradeSurface() 
     {
         String surface = surfaceField.getText();
         System.out.println("Surface améliorée à : " + surface);
     }
+    
+    /**
+     * Sets the enclosure for this controller.
+     *
+     * @param enclosure The enclosure to be set.
+     */
 	public void setEnclosure(Enclosure enclosure) {
 		this.enclosure = enclosure;
 	}
-	
+
+    /**
+     * Sets the enclosure view controller for this controller.
+     *
+     * @param enclosureVueController The enclosure view controller to be set.
+     */
 	public void setEnclosureVueController(EnclosureVueController enclosureVueController) {
 		this.enclosureVueController = enclosureVueController;
 	}

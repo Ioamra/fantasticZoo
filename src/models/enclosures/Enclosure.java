@@ -3,7 +3,9 @@ package models.enclosures;
 import config.Constants;
 import models.creatures.Creature;
 
-
+/**
+ * Represents an enclosure where creatures are housed.
+ */
 public abstract class Enclosure {
 	
 	private int position;
