@@ -26,54 +26,14 @@ import models.master.Master;
 import models.zoo.Zoo;
 
 public class ZooVueController {
-    @FXML
-    private Button nextDayButton;
-    @FXML
-    private Label dayLabel;
-    @FXML
-    private Pane enclosure1;
-    @FXML
-    private Pane enclosure2;
-    @FXML
-    private Pane enclosure3;
-    @FXML
-    private Pane enclosure4;
-    @FXML
-    private Pane enclosure5;
-    @FXML
-    private Pane enclosure6;
-    @FXML
-    private Pane enclosure7;
-    @FXML
-    private Pane enclosure8;
-    @FXML
-    private Pane enclosure9;
-    @FXML
-    private Text consoleText;
-    @FXML
-    private Text zooNameText;
-    @FXML
-    private Text masterName;
-    @FXML
-    private Text masterMoney;
-    @FXML
-    private Button enclosureSellOrBuyButton1;
-    @FXML
-    private Button enclosureSellOrBuyButton2;
-    @FXML
-    private Button enclosureSellOrBuyButton3;
-    @FXML
-    private Button enclosureSellOrBuyButton4;
-    @FXML
-    private Button enclosureSellOrBuyButton5;
-    @FXML
-    private Button enclosureSellOrBuyButton6;
-    @FXML
-    private Button enclosureSellOrBuyButton7;
-    @FXML
-    private Button enclosureSellOrBuyButton8;
-    @FXML
-    private Button enclosureSellOrBuyButton9;
+	@FXML
+	private Label dayLabel;
+	@FXML
+	private Pane enclosure1, enclosure2, enclosure3, enclosure4, enclosure5, enclosure6, enclosure7, enclosure8, enclosure9;
+	@FXML
+	private Text consoleText, zooNameText, masterName, masterMoney;
+	@FXML
+	private Button nextDayButton, enclosureSellOrBuyButton1, enclosureSellOrBuyButton2, enclosureSellOrBuyButton3, enclosureSellOrBuyButton4, enclosureSellOrBuyButton5, enclosureSellOrBuyButton6, enclosureSellOrBuyButton7, enclosureSellOrBuyButton8, enclosureSellOrBuyButton9;
 
     private int nbEnclosure = 9;
     private int dayCounter;

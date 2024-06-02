@@ -24,13 +24,9 @@ import config.Constants;
 public class InitMasterVueController implements Initializable {
 
     @FXML
-    private TextField playerNameField;
-    @FXML
-    private TextField ageField;
+    private TextField playerNameField, ageField, zooNameField;
     @FXML
     private ChoiceBox<String> genderChoiceBox;
-    @FXML
-    private TextField zooNameField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

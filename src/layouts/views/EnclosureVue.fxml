@@ -34,68 +34,22 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fx:id="creature1" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                  </ImageView>
-               </children>
-                <children>
-                    <ImageView fx:id="creature2" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature3" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature4" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature5" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature6" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView  fx:id="creature7" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature8" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature9"  fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature10" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature11" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature12" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature13" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature14" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature15" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
-                </children>
-                <children>
-                    <ImageView fx:id="creature16" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                    </ImageView>
+                 	<ImageView fx:id="creature1" GridPane.columnIndex="0" GridPane.rowIndex="0" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature2" GridPane.columnIndex="1" GridPane.rowIndex="0" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature3" GridPane.columnIndex="2" GridPane.rowIndex="0" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature4" GridPane.columnIndex="3" GridPane.rowIndex="0" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature5" GridPane.columnIndex="0" GridPane.rowIndex="1" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature6" GridPane.columnIndex="1" GridPane.rowIndex="1" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature7" GridPane.columnIndex="2" GridPane.rowIndex="1" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature8" GridPane.columnIndex="3" GridPane.rowIndex="1" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature9" GridPane.columnIndex="0" GridPane.rowIndex="2"  fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature10" GridPane.columnIndex="1" GridPane.rowIndex="2" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature11" GridPane.columnIndex="2" GridPane.rowIndex="2" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature12" GridPane.columnIndex="3" GridPane.rowIndex="2" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature13" GridPane.columnIndex="0" GridPane.rowIndex="3" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature14" GridPane.columnIndex="1" GridPane.rowIndex="3" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature15" GridPane.columnIndex="2" GridPane.rowIndex="3" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
+					<ImageView fx:id="creature16" GridPane.columnIndex="3" GridPane.rowIndex="3" fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#HandleViewCreatureInfo" GridPane.halignment="CENTER" GridPane.valignment="CENTER"></ImageView>
                 </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -36,66 +36,14 @@ import models.enclosures.biomes.UndefinedEnclosure;
 import models.zoo.Zoo;
 
 public class EnclosureVueController {
-    @FXML
-    private Label enclosureLabel;
-    @FXML
-    private Button btnReturnToZoo;
-    @FXML
-    private Text consoleText;
-    @FXML
-    private Text enclosureName;
-    @FXML
-    private Text masterName;
-    @FXML
-    private Text masterMoney;
-    @FXML
-    private ImageView creature1;
-    @FXML
-    private ImageView creature2;
-    @FXML
-    private ImageView creature3;
-    @FXML
-    private ImageView creature4;
-    @FXML
-    private ImageView creature5;
-    @FXML
-    private ImageView creature6;
-    @FXML
-    private ImageView creature7;
-    @FXML
-    private ImageView creature8;
-    @FXML
-    private ImageView creature9;
-    @FXML
-    private ImageView creature10;
-    @FXML
-    private ImageView creature11;
-    @FXML
-    private ImageView creature12;
-    @FXML
-    private ImageView creature13;
-    @FXML
-    private ImageView creature14;
-    @FXML
-    private ImageView creature15;
-    @FXML
-    private ImageView creature16;
-    @FXML
-    private ImageView openBuyCreatureImage;
-    @FXML
-    private ImageView openSellCreatureImage;
-    @FXML
-    private ImageView openMoveCreatureImage;
-    @FXML
-    private ImageView openHealEnclosureImage;
-    @FXML
-    private ImageView openFeedEnclosureImage;
-    @FXML
-    private ImageView openCleanEnclosureImage;
-    @FXML
-    private ImageView openUpgradeEnclosureImage;
-    @FXML
-    private Text surfaceText;
+	@FXML
+	private Label enclosureLabel;
+	@FXML
+	private Button btnReturnToZoo;
+	@FXML
+	private Text consoleText, enclosureName, masterName, masterMoney, surfaceText;
+	@FXML
+	private ImageView creature1, creature2, creature3, creature4, creature5, creature6, creature7, creature8, creature9, creature10, creature11, creature12, creature13, creature14, creature15, creature16, openBuyCreatureImage, openSellCreatureImage, openMoveCreatureImage, openHealEnclosureImage, openFeedEnclosureImage, openCleanEnclosureImage, openUpgradeEnclosureImage;
 
     private Enclosure enclosure;
     private Zoo zoo;
@@ -129,11 +77,10 @@ public class EnclosureVueController {
 
         for (int i = 0; i < creatureImages.size(); i++) {
             ImageView imageView = creatureImages.get(i);
+            String imagePath = null;
             if (i < creatures.size()) {
                 Creature creature = creatures.get(i);
                 usedSurface += creature.getSize();
-                System.out.println(imageView);
-                String imagePath = null;
                 if (creature instanceof Dragon) {
                     imagePath = "/assets/img/dragon.png";
                 } else if (creature instanceof Kraken) {
@@ -151,11 +98,13 @@ public class EnclosureVueController {
                 } else if (creature instanceof Phoenix) {
                     imagePath = "/assets/img/phoenix.png";
                 }
-
                 if (imagePath != null) {
-                    imageView.setImage(new Image(getClass().getResourceAsStream(imagePath)));
-                } else {
-                    imageView.setImage(null);
+                    try {
+                        imageView.setImage(new Image(getClass().getResource(imagePath).toExternalForm()));
+                    } catch (NullPointerException e) {
+                        System.err.println("Image not found: " + imagePath);
+                        imageView.setImage(null);
+                    }
                 }
             } else {
                 imageView.setImage(null);
@@ -195,10 +144,6 @@ public class EnclosureVueController {
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
-    }
-
-    public void setEnclosure(Enclosure enclosure) {
-        this.enclosure = enclosure;
     }
 
     @FXML
@@ -360,5 +305,9 @@ public class EnclosureVueController {
     
     public void setZoo(Zoo zooObject) {
     	this.zoo = zooObject;
+    }
+
+    public void setEnclosure(Enclosure enclosure) {
+        this.enclosure = enclosure;
     }
 }

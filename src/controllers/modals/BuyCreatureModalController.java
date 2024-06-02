@@ -30,21 +30,13 @@ public class BuyCreatureModalController {
 	@FXML
 	private AnchorPane anchorPane;
 	@FXML
-	private ChoiceBox<String> creatureTypeChoiceBox;
-	@FXML
-	private ChoiceBox<String> creatureGenderChoiceBox;
+	private ChoiceBox<String> creatureTypeChoiceBox, creatureGenderChoiceBox;
 	@FXML
 	private TextField nameField;
 	@FXML
 	private Label heightLabel;
 	@FXML
-	private Text price;
-	@FXML
-	private Text dailyEarn;
-	@FXML
-	private Text surface;
-	@FXML
-	private Text height;
+	private Text price, dailyEarn, surface, height;
 
 	private Enclosure enclosure;
 	private EnclosureVueController enclosureVueController;
