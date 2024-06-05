@@ -15,17 +15,23 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="enclosureTypeChoiceBox" layoutX="75.0" layoutY="60.0" onAction="#handleEnclosureTypeSelection" prefWidth="250.0" />
         
         <Label layoutX="35.0" layoutY="104.0" text="Surface :" textFill="WHITE" />
-        <TextField fx:id="surfaceField" layoutX="130.0" layoutY="100.0" prefWidth="100.0" promptText="Surface" />
-        <Button layoutX="250.0" layoutY="100.0" mnemonicParsing="false" onAction="#upgradeSurface" text="+" textFill="BLACK" />
+        <Text fx:id="surfaceField" layoutX="110.0" layoutY="117.0" fill="WHITE"/>
+        <Button fx:id="surfaceBtn" layoutX="150.0" layoutY="100.0" mnemonicParsing="false" onAction="#upgradeSurface" text="+" textFill="BLACK" />
+        <Label fx:id="surfaceLevelLabel" layoutX="180.0" layoutY="104.0" textFill="WHITE" />
         
         <Label fx:id="depthLabel" layoutX="35.0" layoutY="140.0" text="Profondeur :" textFill="WHITE" visible="false" />
-        <TextField fx:id="depthField" layoutX="120.0" layoutY="140.0" prefWidth="200.0" promptText="Profondeur" visible="false" />
+        <Text fx:id="depthField" layoutX="110.0" layoutY="153.0" visible="false" fill="WHITE"/>
+        <Button fx:id="depthBtn" layoutX="150.0" layoutY="136.0" mnemonicParsing="false" onAction="#upgradeDepth" text="+" textFill="BLACK" />
+        <Label fx:id="depthLevelLabel" layoutX="180.0" layoutY="140.0" textFill="WHITE" visible="false" />
+                
+                
+        <Label fx:id="heightLabel" layoutX="35.0" layoutY="140.0" text="Hauteur :" textFill="WHITE" visible="false" />
+        <Text fx:id="heightField" layoutX="110.0" layoutY="153.0"  visible="false" fill="WHITE" />
+        <Button fx:id="heightBtn" layoutX="150.0" layoutY="136.0" mnemonicParsing="false" onAction="#upgradeHeight" text="+" textFill="BLACK" />
+        <Label fx:id="heightLevelLabel" layoutX="180.0" layoutY="140.0" textFill="WHITE" visible="false" />
         
-        <Label fx:id="heightLabel" layoutX="35.0" layoutY="180.0" text="Hauteur :" textFill="WHITE" visible="false" />
-        <TextField fx:id="heightField" layoutX="120.0" layoutY="180.0" prefWidth="200.0" promptText="Hauteur" visible="false" />
         
         <Button layoutY="260.0" mnemonicParsing="false" onAction="#close" prefWidth="80.0" text="Fermer" textFill="BLACK" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="145.0" />
     </children>

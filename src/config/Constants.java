@@ -35,7 +35,6 @@ public class Constants {
          */
         public static final int HEAL_PRICE = 1000;
 
-
         /**
          * The type Aviary.
          */
@@ -155,7 +154,14 @@ public class Constants {
          * The constant MAX_HUNGER.
          */
         public static final int MAX_HUNGER = 100;
-
+        
+        public static final int ILLNESS_PROBABILITY = 10;
+        public static final int DAILY_HUNGER_INCREASE = 10;
+        public static final int MIN_SICKNESS_HP_LOSS = 10;
+        public static final int MAX_SICKNESS_HP_LOSS = 30;
+        public static final int DAILY_ENCLOSURE_CLEANLINESS_LOSS = 10;
+        public static final int RATIO_DAILY_ENCLOSURE_CLEANLINESS_LOSS_IF_DEAD = 3;
+        
         /**
          * The type Dragon.
          */
@@ -175,7 +181,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -213,7 +219,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -251,7 +257,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -285,7 +291,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -323,7 +329,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -361,7 +367,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -399,7 +405,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */
@@ -437,7 +443,7 @@ public class Constants {
             /**
              * The constant MAX_HP.
              */
-            public static final int MAX_HP = 10;
+            public static final int MAX_HP = 100;
             /**
              * The constant MAX_AGE.
              */

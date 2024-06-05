@@ -27,7 +27,8 @@ public class Dragon extends Oviparous {
 			gender, 
 			weight,
 			Constants.Creature.Dragon.SIZE,
-			age
+			age,
+			Constants.Creature.Dragon.MAX_HP
 		);
 	}
 	
@@ -44,6 +45,7 @@ public class Dragon extends Oviparous {
 	public void checkAge() {
 		if (this.age > Constants.Creature.Dragon.MAX_AGE) {
 			this.die();
+			this.setHp(0);
 		}
 	}
 	
@@ -51,6 +53,7 @@ public class Dragon extends Oviparous {
 	 * Heals the dragon to its maximum health points.
 	 */
 	public void heal() {
+		this.setState(State.HEALTHY);
 		this.setHp(Constants.Creature.Dragon.MAX_HP);
 	}
 

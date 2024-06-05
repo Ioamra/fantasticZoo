@@ -1,6 +1,7 @@
 package models.creatures.races;
 
 import config.Constants;
+import models.creatures.Creature.State;
 import models.creatures.reproductionType.Viviparous;
 
 /**
@@ -27,7 +28,8 @@ public class Lycanthropes extends Viviparous {
 			gender, 
 			weight, 
 			Constants.Creature.Lycanthropes.SIZE,
-			age
+			age,
+			Constants.Creature.Lycanthropes.MAX_HP
 		);
 	}
 
@@ -44,6 +46,7 @@ public class Lycanthropes extends Viviparous {
 	public void checkAge() {
 		if (this.age > Constants.Creature.Lycanthropes.MAX_AGE) {
 			this.die();
+			this.setHp(0);
 		}
 	}
 	
@@ -51,6 +54,7 @@ public class Lycanthropes extends Viviparous {
 	 * Heals the lycanthrope to its maximum health points.
 	 */
 	public void heal() {
+		this.setState(State.HEALTHY);
 		this.setHp(Constants.Creature.Lycanthropes.MAX_HP);
 	}
 }

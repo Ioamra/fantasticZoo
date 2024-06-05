@@ -17,6 +17,16 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import models.creatures.Creature;
+import models.creatures.Creature.State;
+import models.creatures.races.Dragon;
+import models.creatures.races.Kraken;
+import models.creatures.races.Lycanthropes;
+import models.creatures.races.Megalodon;
+import models.creatures.races.Mermaid;
+import models.creatures.races.Nymph;
+import models.creatures.races.Phoenix;
+import models.creatures.races.Unicorn;
 import models.enclosures.Enclosure;
 import models.enclosures.biomes.Aquarium;
 import models.enclosures.biomes.Aviary;
@@ -24,6 +34,10 @@ import models.enclosures.biomes.Terrestrial;
 import models.enclosures.biomes.UndefinedEnclosure;
 import models.master.Master;
 import models.zoo.Zoo;
+import java.util.Random;
+
+import config.Constants;
+
 
 /**
  * Controller class for the zoo view.
@@ -78,6 +92,72 @@ public class ZooVueController {
     void handleNextDayButton() {
         dayCounter++;
         dayLabel.setText("Jour " + dayCounter);
+        int moneyEarn = 0;
+        for (Enclosure enclosure: this.zoo.getEnclosureList()) {
+        	int cleanlinessLost = 0;
+        	for (Creature creature: enclosure.getCreatureList()) {
+        		if (creature.getState() != State.DEAD) {
+        			creature.incrementAge();
+        			Random random = new Random();
+        			int rngSick = random.nextInt(101);
+        			if (creature.getState() == State.HEALTHY && rngSick > Constants.Creature.ILLNESS_PROBABILITY + Constants.Creature.ILLNESS_PROBABILITY * (100 - enclosure.getCleanliness())) {
+        				creature.fallIll();
+        			}
+        			if (creature.getState() == State.SICK) {
+        				int tmpRngHp = Constants.Creature.MAX_SICKNESS_HP_LOSS - Constants.Creature.MIN_SICKNESS_HP_LOSS;
+        				int rngHp = random.nextInt(tmpRngHp) + Constants.Creature.MIN_SICKNESS_HP_LOSS;
+        				creature.setHp(creature.getHp() - rngHp);
+        			}        			
+        			cleanlinessLost += Constants.Creature.DAILY_ENCLOSURE_CLEANLINESS_LOSS;     
+        			creature.setHunger(creature.getHunger() - Constants.Creature.DAILY_HUNGER_INCREASE);
+        			creature.checkHunger();
+        		} else {
+        			cleanlinessLost += Constants.Creature.DAILY_ENCLOSURE_CLEANLINESS_LOSS * Constants.Creature.RATIO_DAILY_ENCLOSURE_CLEANLINESS_LOSS_IF_DEAD;        			
+        		}
+        		if (creature.getHp() <= 0) {
+        			creature.setHp(0);
+        			creature.setState(State.DEAD);
+        		}
+        		if (creature.getState() == State.SICK) {
+        			this.addInConsole("La créature " + creature.getName() + " est malade dans l'enclos " + enclosure.getName());
+        		}
+        		if (creature.getState() == State.DEAD) {
+        			this.addInConsole("La créature " + creature.getName() + " est morte dans l'enclos " + enclosure.getName());
+        		} else {
+        			if (creature instanceof Dragon) {
+        				moneyEarn += Constants.Creature.Dragon.MONEY_GAIN;
+        			}
+        			if (creature instanceof Kraken) {
+        				moneyEarn += Constants.Creature.Kraken.MONEY_GAIN;
+        			}
+        			if (creature instanceof Lycanthropes) {
+        				moneyEarn += Constants.Creature.Lycanthropes.MONEY_GAIN;
+        			}
+        			if (creature instanceof Megalodon) {
+        				moneyEarn += Constants.Creature.Megalodon.MONEY_GAIN;
+        			}
+        			if (creature instanceof Mermaid) {
+        				moneyEarn += Constants.Creature.Mermaid.MONEY_GAIN;
+        			}
+        			if (creature instanceof Nymph) {
+        				moneyEarn += Constants.Creature.Nymph.MONEY_GAIN;
+        			}
+        			if (creature instanceof Phoenix) {
+        				moneyEarn += Constants.Creature.Phoenix.MONEY_GAIN;
+        			}
+        			if (creature instanceof Unicorn) {
+        				moneyEarn += Constants.Creature.Unicorn.MONEY_GAIN;
+        			}
+        			
+        		}
+        	}
+        	int newCleanliness = enclosure.getCleanliness() - cleanlinessLost > 0 ? enclosure.getCleanliness() - cleanlinessLost : 0;
+        	enclosure.setCleanliness(newCleanliness);
+        }
+        this.addInConsole("Vos créatures vous ont rapporté au total " + moneyEarn + " $.");
+        this.zoo.getMaster().setMoney(this.zoo.getMaster().getMoney() + moneyEarn);
+        consoleText.setText(this.console);
+        this.updateData();
     }
     
     /**
@@ -109,6 +189,7 @@ public class ZooVueController {
             enclosureController.setEnclosure(enclosure);
             enclosureController.setDayCounter(dayCounter);
             enclosureController.setZoo(zoo);
+            enclosureController.initData();
             enclosureController.updateData();
 
             Stage stage = (Stage) nextDayButton.getScene().getWindow();

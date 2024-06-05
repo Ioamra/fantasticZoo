@@ -1,6 +1,7 @@
 package models.creatures.races;
 
 import config.Constants;
+import models.creatures.Creature.State;
 import models.creatures.reproductionType.Oviparous;
 
 /**
@@ -27,7 +28,8 @@ public class Phoenix extends Oviparous {
 			gender, 
 			weight, 
 			Constants.Creature.Phoenix.SIZE,
-			age
+			age,
+			Constants.Creature.Phoenix.MAX_HP
 		);
 	}
 	
@@ -44,6 +46,7 @@ public class Phoenix extends Oviparous {
 	public void checkAge() {
 		if (this.age > Constants.Creature.Phoenix.MAX_AGE) {
 			this.die();
+			this.setHp(0);
 		}
 	}
 
@@ -51,6 +54,7 @@ public class Phoenix extends Oviparous {
 	 * Heals the phoenix to its maximum health points.
 	 */
 	public void heal() {
+		this.setState(State.HEALTHY);
 		this.setHp(Constants.Creature.Phoenix.MAX_HP);
 	}
 }

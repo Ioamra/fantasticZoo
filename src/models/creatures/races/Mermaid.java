@@ -1,6 +1,7 @@
 package models.creatures.races;
 
 import config.Constants;
+import models.creatures.Creature.State;
 import models.creatures.reproductionType.Viviparous;
 
 /**
@@ -27,7 +28,8 @@ public class Mermaid extends Viviparous {
 			gender, 
 			weight, 
 			Constants.Creature.Mermaid.SIZE,
-			age
+			age,
+			Constants.Creature.Mermaid.MAX_HP
 		);
 	}
 
@@ -44,6 +46,7 @@ public class Mermaid extends Viviparous {
 	public void checkAge() {
 		if (this.age > Constants.Creature.Mermaid.MAX_AGE) {
 			this.die();
+			this.setHp(0);
 		}
 	}
 	
@@ -51,6 +54,7 @@ public class Mermaid extends Viviparous {
 	 * Heals the mermaid to its maximum health points.
 	 */
 	public void heal() {
+		this.setState(State.HEALTHY);
 		this.setHp(Constants.Creature.Mermaid.MAX_HP);
 	}
 }

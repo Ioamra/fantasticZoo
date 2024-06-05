@@ -1,6 +1,7 @@
 package models.creatures.races;
 
 import config.Constants;
+import models.creatures.Creature.State;
 import models.creatures.reproductionType.Oviparous;
 
 /**
@@ -27,7 +28,8 @@ public class Kraken extends Oviparous {
 			gender, 
 			weight, 
 			Constants.Creature.Kraken.SIZE,
-			age
+			age,
+			Constants.Creature.Kraken.MAX_HP
 		);
 	}
 	
@@ -44,6 +46,7 @@ public class Kraken extends Oviparous {
 	public void checkAge() {
 		if (this.age > Constants.Creature.Kraken.MAX_AGE) {
 			this.die();
+			this.setHp(0);
 		}
 	}
 	
@@ -51,6 +54,7 @@ public class Kraken extends Oviparous {
 	 * Heals the kraken to its maximum health points.
 	 */
 	public void heal() {
+		this.setState(State.HEALTHY);
 		this.setHp(Constants.Creature.Kraken.MAX_HP);
 	}
 }

@@ -19,7 +19,7 @@ public abstract class Creature {
          * F gender.
          */
         F };
-	private enum State {
+	public enum State {
         /**
          * Dead state.
          */
@@ -61,7 +61,8 @@ public abstract class Creature {
 		Gender gender, 
 		int weight, 
 		int size,
-		int age
+		int age,
+		int hp
 	) {
 		this.setName(name);
 		this.setGender(gender);
@@ -72,6 +73,7 @@ public abstract class Creature {
 		this.setStamina(Constants.Creature.MAX_STAMINA);
 		this.setSleep(false);
 		this.setState(State.HEALTHY);
+		this.setHp(hp);
 	}
 
     /**
@@ -91,10 +93,26 @@ public abstract class Creature {
     /**
      * Sets the state of the creature to DEAD.
      */
+    public void fallIll() {
+		this.setState(State.SICK);
+	}
+    
     public void die() {
 		this.setState(State.DEAD);
 	}
+    
+    public void incrementAge() {
+    	this.setAge(this.getAge()+1);
+    	this.checkAge();
+    }
 
+    public void checkHunger() {
+    	if (this.getHunger() <= 0) {
+    		this.die();
+    		this.setHp(0);
+    	}
+    }
+    
     /**
      * Restores the creature's health points (HP) to its maximum value.
      */

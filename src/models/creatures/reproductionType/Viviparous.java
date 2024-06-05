@@ -22,14 +22,16 @@ public abstract class Viviparous extends Creature {
 		Gender gender, 
 		int weight, 
 		int size,
-		int age
+		int age,
+		int hp
 	) {
 		super(
 			name, 
 			gender, 
 			weight, 
 			size,
-			age
+			age,
+			hp
 		);
 	}
 	

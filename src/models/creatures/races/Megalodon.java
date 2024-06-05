@@ -1,6 +1,7 @@
 package models.creatures.races;
 
 import config.Constants;
+import models.creatures.Creature.State;
 import models.creatures.reproductionType.Viviparous;
 
 /**
@@ -26,8 +27,9 @@ public class Megalodon extends Viviparous {
 			name, 
 			gender, 
 			weight, 
-			Constants.Creature.Lycanthropes.SIZE,
-			age
+			Constants.Creature.Megalodon.SIZE,
+			age,
+			Constants.Creature.Megalodon.MAX_HP
 		);
 	}
 	
@@ -44,6 +46,7 @@ public class Megalodon extends Viviparous {
 	public void checkAge() {
 		if (this.age > Constants.Creature.Megalodon.MAX_AGE) {
 			this.die();
+			this.setHp(0);
 		}
 	}
 	
@@ -51,6 +54,7 @@ public class Megalodon extends Viviparous {
 	 * Heals the megalodon to its maximum health points.
 	 */
 	public void heal() {
+		this.setState(State.HEALTHY);
 		this.setHp(Constants.Creature.Megalodon.MAX_HP);
 	}
 }

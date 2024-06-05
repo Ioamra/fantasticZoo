@@ -70,11 +70,17 @@ public class EnclosureVueController {
                 creature13, creature14, creature15, creature16
         );
     }
+    
+    public void initData() {
+    	this.addInConsole("L'enclos à une propreté de " + this.enclosure.getCleanliness());
+    	consoleText.setText(this.console);
+    }
 
     /**
      * Updates the displayed data for the enclosure.
      */
     public void updateData() {
+    	
         int usedSurface = 0;
         List<Creature> creatures = new ArrayList<>(List.of(this.enclosure.getCreatureList()));
 
